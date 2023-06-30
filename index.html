@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&family=Open+Sans:ital,wght@0,300;0,600;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9495825293.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="contenedor-main">
+    <!-- SECCION HEADER -->
+        <header>
+            <h1 class="h1-titulo">Generador de Memes</h1>
+            <div class="opciones-header">
+                <ul> 
+                    <li><i class="fa-sharp fa-solid fa-file-image"></i>Imagen</li>
+                    <li><i class="fa-sharp fa-solid fa-font"></i>Texto</li>
+                    <li><i class="fa-solid fa-lightbulb"></i>Modo claro</li>
+                </ul>
+            </div>
+        </header>
+    <!-- SECCION MAIN -->
+        <main>
+            <div class="contenedor-editor">
+                <p class="texto-meme">TOP TEXT</p>
+                <div class="div-img"></div>
+                <p class="texto-meme">BOTTOM TEXT</p>
+            </div>
+            <div class="boton-descargar"><i class="fa-solid fa-download"></i>Descargar meme</div>
+        </main>
+    </div>
+    <aside class="aside-img">
+        <h2>IMAGEN</h2>
+        <div class="url">
+            <h3>URL</h3>
+            <input type="text">
+        </div>
+        <div div-fondo>
+            <h3>FONDO</h3>
+            <label class='div-color'><input type="color" name="" id="" value="#ffffff"></label>
+            <label>
+                <select name="fondo" id="" class="editor-img">
+                    <option value="Ninguno">Ninguno</option>
+                    <option value="Aclarar">Aclarar</option>
+                    <option value="Oscurecer">Oscurecer</option>
+                    <option value="Diferencia">Diferencia</option>
+                    <option value="Luminosidad">Luminosidad</option>
+                    <option value="Oscurecer">Oscurecer</option>
+                </select>
+            </label>
+        </div>
+        <h3>FILTROS</h3>
+        <p>BRILLO</p>
+        <input type="range" name="" id="">
+        <p>OPACIDAD</p>
+        <input type="range" name="" id="">
+        <p>CONTRASTE</p>
+        <input type="range" name="" id="">
+        <p>DESENFOQUE</p>
+        <input type="range" name="" id="">
+        <p>ESCALA DE GRISES</p>
+        <input type="range" name="" id="">
+        <p>SEPIA</p>
+        <input type="range" name="" id="">
+        <p>HUE</p>
+        <input type="range" name="" id="">
+        <p>SATURADO</p>
+        <input type="range" name="" id="">
+        <p>NEGATIVO</p>
+        <input type="range" name="" id="">
+        <h4 class="boton-aside">Reestablecer filtros</h4>
+    </aside>
+    <aside class="aside-texto">
+        <h2>TEXTO</h2>
+        <div>
+            <h3>SUPERIOR</h3>
+            <input type="text">
+        </div>
+        <div>
+            <h3>INFERIOR</h3>
+            <input type="text">
+        </div>
+        <div>
+            <h3>FUENTE</h3>
+            <label>
+                <select name="fuente" id="" class="editor-img">
+                    <option value="arial">Arial</option>
+                    <option value="Arial Black">Arial Black</option>
+                    <option value="American Typewriter">American Typewriter</option>
+                    <option value="Andale Mono">Andale Mono</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Helvatica">Helvatica</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <input type="number" name="" id="">
+            <label for=""></label>
+            <div class="boton-justificado"><i class="fas fa-align-left"></i></div>
+            <div class="boton-justificado"><i class="fas fa-align-center"></i></div>
+            <div class="boton-justificado"><i class="fas fa-align-right"></i></div>
+        </div>
+        <h3>COLOR</h3>
+            <label class='div-color-texto'><input type="color" name="" id="" value="#000000"></label>
+            <h3>FONDO</h3>
+            <label class='div-color'><input type="color" name="" id="" value=""></label>
+            <h3>CONTORNO</h3>
+            <div class="boton-texto">Ninguno</div>
+            <div class="boton-texto">Claro</div>
+            <div class="boton-texto">Oscuro</div>
+        <h3>ESPACIADO</h3>
+        <input type="number" name="" id="">
+        <h3>INTERLINEADO</h3>
+        <input type="number" name="" id="">
+    </aside>
+</body>
+</html>
