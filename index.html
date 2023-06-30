@@ -43,7 +43,7 @@
             <h3>FONDO</h3>
             <label class='div-color'><input type="color" name="" id="" value="#ffffff"></label>
             <label>
-                <select name="fondo" id="" class="editor-img">
+                <select name="fondo" id="" class="select-texto">
                     <option value="Ninguno">Ninguno</option>
                     <option value="Aclarar">Aclarar</option>
                     <option value="Oscurecer">Oscurecer</option>
@@ -78,16 +78,19 @@
         <h2>TEXTO</h2>
         <div>
             <h3>SUPERIOR</h3>
-            <input type="text">
+            <textarea class="select-texto">TOP TEXT</textarea>
+            <input type="checkbox">
+            <label for="">Sin texto superior</label>
         </div>
         <div>
             <h3>INFERIOR</h3>
-            <input type="text">
+            <textarea class="select-texto">BOTTOM TEXT</textarea>
+            <input type="checkbox">
+            <label for="">Sin texto inferior</label>
         </div>
         <div>
             <h3>FUENTE</h3>
-            <label>
-                <select name="fuente" id="" class="editor-img">
+                <select name="fuente" id="" class="select-texto">
                     <option value="arial">Arial</option>
                     <option value="Arial Black">Arial Black</option>
                     <option value="American Typewriter">American Typewriter</option>
@@ -98,27 +101,44 @@
                     <option value="Verdana">Verdana</option>
                     <option value="Times New Roman">Times New Roman</option>
                 </select>
-            </label>
         </div>
-        <div>
-            <input type="number" name="" id="">
+        <div class="tipos-de-justificado">
+            <input type="number" name="" id="tamanio-fuente" class="select-texto" value="40">
             <label for=""></label>
             <div class="boton-justificado"><i class="fas fa-align-left"></i></div>
             <div class="boton-justificado"><i class="fas fa-align-center"></i></div>
             <div class="boton-justificado"><i class="fas fa-align-right"></i></div>
         </div>
-        <h3>COLOR</h3>
-            <label class='div-color-texto'><input type="color" name="" id="" value="#000000"></label>
-            <h3>FONDO</h3>
-            <label class='div-color'><input type="color" name="" id="" value=""></label>
-            <h3>CONTORNO</h3>
-            <div class="boton-texto">Ninguno</div>
-            <div class="boton-texto">Claro</div>
-            <div class="boton-texto">Oscuro</div>
+        <div class="color-fondo">
+            <div class="div-color-fondo">
+                <h3>COLOR</h3>
+                <input type="color" name="" id="" value="#000000"><label class='div-color-texto'></label>
+            </div>
+            <div class=" ">
+                <h3>FONDO</h3>
+                <input type="color" name="" id="" value="#ffffff"><label class='div-color'></label>
+            </div>
+        </div>
+        <input type="checkbox">
+        <label>Fondo Transparente</label>
+        <h3>CONTORNO</h3>
+            <div class="tipos-de-contorno">
+                <div class="boton-texto">Ninguno</div>
+                <div class="boton-texto">Claro</div>
+                <div class="boton-texto">Oscuro</div>
+            </div>
         <h3>ESPACIADO</h3>
-        <input type="number" name="" id="">
+        <input type="number" name="" id="" class="select-texto" min="5" max="60" value="35">
         <h3>INTERLINEADO</h3>
-        <input type="number" name="" id="">
+        <select id="" class="select-texto">
+            <option value="0.8">0.8</option>
+            <option value="1">1</option>
+            <option value="1.2">1.2</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+            <option value="2.5">2.5</option>
+        </select>
     </aside>
+    <script src="script.js"></script>
 </body>
 </html>
