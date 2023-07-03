@@ -114,6 +114,16 @@ input[type='range']{
     border-radius: 10px;
     margin-top: 0px;
 }
+input[type='range']::-moz-range-thumb{
+    margin-top: 1px;
+    border: 1px solid;
+    height: 26px;
+    width: 26px;
+    border-radius: 15px;
+    background: #FFFFFF;
+    color: #ffffff;
+    cursor: pointer;
+}
 input[type='text']{
     width: 100%;
     height: 35px;
@@ -246,5 +256,5 @@ textarea{
     align-items: center;
 }
 .aside-texto{
-    left: 1;
+    left: 0;
 }
