@@ -32,6 +32,7 @@ header{
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-bottom: 20px;
 }
 .boton-header{
     font-family: 'Open Sans', sans-serif;
@@ -327,6 +328,69 @@ textarea{
     width: 50%;
     background-color: #000000;
 }
+
+/**CLASES MODO OSCURO**/
+
+input.modo-oscuro[type='text']{
+        color: #ffffff;
+    }
+input.modo-oscuro[type='number']{
+        color: #ffffff;
+    }
+header.modo-oscuro{
+        background-color: #101422;
+        color: #ffffff;
+    }
+input.modo-oscuro{
+        color: #6d6e72;
+    }
+label.modo-oscuro{
+        color: #ffffff;
+    }
+option.modo-oscuro{
+        color: #ffffff;
+        background-color:#6d6e72 ;
+    }
+aside.modo-oscuro{
+        background-color: #252935;
+        color: #ffffff;
+    }
+body.modo-oscuro{
+        background-color:#30343f;
+        color: #ffffff;
+    }
+h2.modo-oscuro{
+        color: #ffffff;
+    }
+.select-img.modo-oscuro{
+        color: #ffffff;
+    }
+.select-texto.modo-oscuro{
+        color: #ffffff;
+    }
+.h1-titulo.modo-oscuro{
+        color: #ffffff;
+    }
+.boton-texto.modo-oscuro{
+        color: #ffffff;
+    }
+.input-url.modo-oscuro{
+        color: #ffffff;
+    }
+.icono.modo-oscuro{
+        color: #ffffff;
+    }
+.boton-header.modo-oscuro{
+        color: #ffffff;
+    }
+.boton-aside.modo-oscuro{
+        color: #ffffff;
+    }
+
+
+
+/**MEDIA QUERYS**/
+
 @media(max-width:700px){
     .h1-titulo{
         font-size: 1.7rem;
