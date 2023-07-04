@@ -25,17 +25,18 @@
         <main>
             <div class="contenedor-editor">
                 <p class="texto-meme">TOP TEXT</p>
-                <div class="div-img"></div>
+                <div class="meme-img" id="meme-img"></div>
                 <p class="texto-meme">BOTTOM TEXT</p>
             </div>
-            <div class="boton-descargar"><i class="fa-solid fa-download"></i>Descargar meme</div>
+            <button class="boton-descargar"><i class="fa-solid fa-download"></i>Descargar meme</button>
         </main>
     </div>
     <aside class="aside" id="aside-img">
+        <a class="cruz-aside">X</a>
         <h2>IMAGEN</h2>
         <div class="url">
             <h3>URL</h3>
-            <input type="text">
+            <input type="text" class="input-url" id="input-url">
         </div>
         <h3>FONDO</h3>
             <div class="div-fondo">
@@ -43,7 +44,7 @@
                     <input type="color"  name="" id="color-fondo-img" value="#ffffff">
                 </div>
             <label>
-                <select name="fondo" id="" class="select-img">
+                <select name="fondo" id="select-fondo-imagen" class="select-img">
                     <option value="Ninguno">Ninguno</option>
                     <option value="Aclarar">Aclarar</option>
                     <option value="Oscurecer">Oscurecer</option>
@@ -54,38 +55,39 @@
             </label>
             </div>
         <h3>FILTROS</h3>
-        <label>BRILLO</label>
-        <input type="range" name="" class="range"   id="range-brillo" min="1" max="100" value="100">
-        <label>OPACIDAD</label>
-        <input type="range" name="" class="range" id="range-opacidad" min="1" max="100" value="100">
-        <label>CONTRASTE</label>
-        <input type="range" name="" class="range" id="range-contraste" min="1" max="100" value="1">
-        <label>DESENFOQUE</label>
-        <input type="range" name="" class="range" id="range-desenfoque" min="1" max="100" value="1">
-        <label>ESCALA DE GRISES</label>
-        <input type="range" name="" class="range" id="range-grises" min="1" max="100" value="1">
-        <label>SEPIA</label>
-        <input type="range" name="" class="range" id="range-sepia" min="1" max="100" value="1">
-        <label>HUE</label>
-        <input type="range" name="" class="range" id="range-hue" min="1" max="100" value="1">
-        <label>SATURADO</label>
-        <input type="range" name="" class="range" id="range-saturado" min="1" max="100" value="1">
-        <label>NEGATIVO</label>
-        <input type="range" name="" class="range" id="range-negativo" min="1" max="100" value="1">
-        <h4 class="boton-aside">Reestablecer filtros</h4>
+        <label for="brillo">BRILLO</label>
+        <input type="range" name="brillo" class="range"   id="range-brillo" min="0" max="1" value="1" step="0.1">
+        <label for="opacidad">OPACIDAD</label>
+        <input type="range" name="opacidad" class="range" id="range-opacidad" min="0" max="1" value="1" step="1">
+        <label for="contraste">CONTRASTE</label>
+        <input type="range" name="contraste" class="range" id="range-contraste" min="100" max="1000" value="100" step="1">
+        <label for="desenfoque">DESENFOQUE</label>
+        <input type="range" name="desenfoque" class="range" id="range-desenfoque" min="0" max="10" value="0" step="0.1">
+        <label for="grises">ESCALA DE GRISES</label>
+        <input type="range" name="grises" class="range" id="range-grises" min="0" max="100" value="0" step="0.1">
+        <label for="sepia">SEPIA</label>
+        <input type="range" name="sepia" class="range" id="range-sepia" min="0" max="100" value="0" step="0.1">
+        <label for="hue">HUE</label>
+        <input type="range" name="hue" class="range" id="range-hue" min="0" max="359" value="0" step="1">
+        <label for="saturado">SATURADO</label>
+        <input type="range" name="saturado" class="range" id="range-saturado" min="100" max="1000" value="100" step="10">
+        <label for="negativo">NEGATIVO</label>
+        <input type="range" name="negativo" class="range" id="range-negativo" min="0" max="1" value="1" step="0.1">
+        <button class="boton-aside">Reestablecer filtros</button>
     </aside>
     <aside class="aside hidden" id="aside-texto">
+        <a class="cruz-aside">X</a>
         <h2>TEXTO</h2>
         <div class="texto-texarea">
             <h3>SUPERIOR</h3>
             <textarea class="select-texto">TOP TEXT</textarea></div>
-            <input type="checkbox">
+            <input type="checkbox" id="texto-superior">
             <label for="">Sin texto superior</label>
         
         <div class="texto-texarea">
             <h3>INFERIOR</h3>
             <textarea class="select-texto">BOTTOM TEXT</textarea></div>
-            <input type="checkbox">
+            <input type="checkbox" id="texto-inferior">
             <label for="">Sin texto inferior</label>
         
         <div>
@@ -123,9 +125,9 @@
         <label>Fondo Transparente</label>
         <h3>CONTORNO</h3>
             <div class="tipos-de-contorno">
-                <div class="boton-texto">Ninguno</div>
-                <div class="boton-texto">Claro</div>
-                <div class="boton-texto">Oscuro</div>
+                <button class="boton-texto">Ninguno</button>
+                <button class="boton-texto">Claro</button>
+                <button class="boton-texto">Oscuro</button>
             </div>
         <h3>ESPACIADO</h3>
         <input type="number" name="" id="" class="select-texto" min="5" max="60" value="35">
