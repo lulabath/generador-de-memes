@@ -33,7 +33,7 @@
         </main>
     </div>
     <aside class="aside" id="aside-img">
-        <a class="cruz-aside">X</a>
+        <a class="cruz-aside" id="cruz-aside-img">X</a>
         <h2>IMAGEN</h2>
         <div class="url">
             <h3>URL</h3>
@@ -42,7 +42,7 @@
         <h3>FONDO</h3>
             <div class="div-fondo">
                 <div class="fondo-img">
-                    <input type="color"  name="" id="color-fondo-img" value="#ffffff">
+                    <input type="color"  name="" id="color-fondo-img" class="input-color-circulo" value="#ffffff" ><span id='texto-codigo'></span>
                 </div>
             <label>
                 <select name="fondo" id="select-fondo-imagen" class="select-img">
@@ -77,7 +77,7 @@
         <button class="boton-aside">Reestablecer filtros</button>
     </aside>
     <aside class="aside hidden" id="aside-texto">
-        <a class="cruz-aside">X</a>
+        <a class="cruz-aside" id="cruz-aside-texto">X</a>
         <h2>TEXTO</h2>
         <div class="texto-texarea">
             <h3>SUPERIOR</h3>
@@ -115,11 +115,11 @@
         <div class="color-fondo">
             <div class="div-color-texto">
                 <h3>COLOR</h3>
-                <div class="color-fondo-texto"><input type="color" name="" id="" value="#000000"></div>
+                <div class="color-fondo-texto"><input type="color" name="" id="" class="input-color-circulo" value="#000000"></div>
             </div>
             <div class="div-color-texto">
                 <h3>FONDO</h3>
-                <div class="color-fondo-texto"><input type="color" name="" id="" value="#ffffff"></div>
+                <div class="color-fondo-texto"><input type="color" name="" id="" class="input-color-circulo" value="#ffffff"></div>
             </div>
         </div>
         <input type="checkbox">

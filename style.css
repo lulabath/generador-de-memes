@@ -1,7 +1,7 @@
 body{
+    background-color: #eeeeee;
     display: flex;
     margin: 0;
-    background-color: #eeeeee;
     font-family: 'Open Sans', sans-serif;
     justify-content: center;
     align-items: center;
@@ -15,18 +15,19 @@ body{
 header{
     display: flex;
     flex-direction: column;
-    background-color:#e0e0e0;
     justify-content: center;
     align-items: center;
     margin: 0;
     font-size: 14px;
     letter-spacing: 0.5px;
+    background-color:#e0e0e0;
+    color: #4e4d4d;
 }
 .h1{
     font-size: larger;
-    color: rgb(0, 0, 0);
 }
 .opciones-header{
+    color: #4e4d4d;
     display: flex;
     width: 100vw;
     justify-content: center;
@@ -34,12 +35,16 @@ header{
     text-align: center;
     margin-bottom: 20px;
 }
+option{
+    color: #4e4d4d;
+    background-color:#c5c5c7a2;
+}
 .boton-header{
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     margin-right:10px;
     text-decoration:none;
-    color: #000000;
+    color: #4e4d4d;
     justify-content: center;
     border-radius: 5px;
     background-color: transparent;
@@ -81,6 +86,8 @@ main{
     background-position: center;
 }
 aside{
+    background-color: #fafafa;
+    color: rgb(56, 56, 56);
     display: block;
     margin-top:0 ;
     flex-direction: column;
@@ -91,8 +98,6 @@ aside{
     right: 0;
     width: 200px;
     height: 100vh;
-    background-color: #fafafa;
-    color: rgb(56, 56, 56);
     position: fixed;
     justify-content: center;
     align-items: center;
@@ -104,6 +109,9 @@ aside{
     margin: 10px;
     font-size: 2.3rem;
 }
+h1{
+    color: #4e4d4d;
+}
 h2{
     text-align: center;
     color: #4e4d4d;
@@ -111,9 +119,10 @@ h2{
 h3{
     margin: 10px 0;
     font-size: 0.9rem;
+    color:#4e4d4d;
 }
 label{
-    color: #000000;
+    color: #4e4d4d;
     font-size: 0.9rem;
     font-family: 'Open Sans', 'sans-serif';
     font-weight: 300;
@@ -121,7 +130,8 @@ label{
     appearance: none;
 }
 input[type='range']{
-    background-color: #5d5d5f;
+    background-color:#4e4d4d;
+    color: #4e4d4d;
     width:95%;
     height: 6px;
     appearance: none;
@@ -134,10 +144,13 @@ input[type='text']{
     border-radius: 2px;
     margin: 5px;
     background-color:#c5c5c7a2;
+    color: #4e4d4d;
     border: 0;
     outline: 0;
 }
 input{
+    background-color:#c5c5c7a2;
+    color: #4e4d4d;
     cursor: pointer;
 }
 .div-color{
@@ -199,30 +212,22 @@ input{
     color: #4e4d4d;
 }
 .select-img{
-    height: 35px;
+    color: #4e4d4d;
     background-color:#c5c5c7a2;
+    height: 35px;
     border-radius: 3px;
     margin: 5px;
     outline: 0;
     border: 0;
-    color: #4e4d4d;
 }
-.fa-file-image{
+.icono{
     margin: 5px;
     font-size: 1;
     color: #4e4d4d;
 }
-.fa-font{
-    margin: 5px;
-    font-size: 1rem;
-    color: #4e4d4d;
-}
-.fa-lightbulb{
-    margin: 5px;
-    font-size: 1rem;
-    color: #4e4d4d;
-}
+
 .fa-download{
+    color: #ffffff;
     margin-right: 10px;
     font-size: 1rem;
 }
@@ -230,9 +235,10 @@ input{
     width: 50%;
 }
 .boton-justificado{
+    color: #4e4d4d;
+    background-color:#c5c5c7a2;
     width: 16%;
     height: 35px;
-    background-color:#c5c5c7a2;
     border-radius: 3px;
     margin: 5px;
     outline: 0;
@@ -287,10 +293,12 @@ input{
     margin: 5px;
     outline: 0;
     border: 0;
-    color: #4e4d4d;
     align-items: center;
+    color:  #7e7c7c;
 }
 input[type="color" i]{
+    background-color:#c5c5c7a2;
+    color: #4e4d4d;
     display: flex;
     justify-content: center;
     -webkit-appearance: none;
@@ -300,9 +308,17 @@ input[type="color" i]{
     margin: 0;
     padding: 0;
     border: none;
-    border-radius: 50%;
+    border-radius: 100%;
     outline-style: none;
 }
+
+.input-color-circulo::-webkit-color-swatch, ::-webkit-color-swatch-wrapper{
+    height:20px;
+    width: 20px;
+    border-radius:100%;
+    border: none;
+}
+
 .color-fondo-texto{
     display: flex;
     height: 35px;
@@ -326,68 +342,58 @@ textarea{
 }
 .input-url{
     width: 50%;
-    background-color: #000000;
+    background-color: #4e4d4d;
 }
 
-/**CLASES MODO OSCURO**/
 
-input.modo-oscuro[type='text']{
+
+
+/* CLASES MODO OSCURO */
+
+.modo-oscuro input[type=text]{
         color: #ffffff;
+        background-color:#6d6e72;
     }
-input.modo-oscuro[type='number']{
-        color: #ffffff;
-    }
-header.modo-oscuro{
+
+.modo-oscuro header{
         background-color: #101422;
         color: #ffffff;
     }
-input.modo-oscuro{
-        color: #6d6e72;
-    }
-label.modo-oscuro{
-        color: #ffffff;
-    }
-option.modo-oscuro{
+.modo-oscuro option{
         color: #ffffff;
         background-color:#6d6e72 ;
     }
-aside.modo-oscuro{
+.modo-oscuro aside{
         background-color: #252935;
         color: #ffffff;
     }
-body.modo-oscuro{
+.modo-oscuro{
         background-color:#30343f;
         color: #ffffff;
     }
-h2.modo-oscuro{
+.modo-oscuro h1, h2, h3, label{
         color: #ffffff;
     }
-.select-img.modo-oscuro{
+.modo-oscuro .icono, .boton-header, .h1-titulo{
+    color: #ffffff;
+}
+.modo-oscuro .select-texto,.select-img{
         color: #ffffff;
-    }
-.select-texto.modo-oscuro{
-        color: #ffffff;
-    }
-.h1-titulo.modo-oscuro{
-        color: #ffffff;
-    }
-.boton-texto.modo-oscuro{
-        color: #ffffff;
-    }
-.input-url.modo-oscuro{
-        color: #ffffff;
-    }
-.icono.modo-oscuro{
-        color: #ffffff;
-    }
-.boton-header.modo-oscuro{
-        color: #ffffff;
-    }
-.boton-aside.modo-oscuro{
-        color: #ffffff;
+        background-color:#6d6e72;
     }
 
-
+.modo-oscuro .boton-justificado, .boton-texto{
+    color: #ffffff;
+    background-color:#6d6e72;
+}
+.modo-oscuro .color-fondo-texto{
+    color: #ffffff;
+    background-color:#6d6e72;
+}
+.modo-oscuro .boton-aside, .fondo-img{
+    color: #ffffff;
+    background-color:#6d6e72;
+}
 
 /**MEDIA QUERYS**/
 
@@ -412,7 +418,9 @@ h2.modo-oscuro{
         right: 0px;
     }
     input[type=text]{
-        width:90%
+        width:90%;
+        background-color: #c5c5c7a2;
+        color: #4e4d4d;
     }
     .div-fondo{
         justify-content: left;
@@ -432,7 +440,11 @@ h2.modo-oscuro{
     .tipos-de-contorno{
         width: 97%;
     }
+    a{
+        color: #4e4d4d;
+    }
 }
+
 @media(min-width:701px){
     .cruz-aside{
         display: none;

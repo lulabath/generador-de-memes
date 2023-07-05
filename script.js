@@ -1,3 +1,5 @@
+/* ASIDE TEXTO E IMAGEN Y CLASS HIDDEN*/
+
 const botonTexto = document.getElementById('boton-aside-texto');
 const botonImagen = document.getElementById('boton-aside-imagen');
 
@@ -16,35 +18,42 @@ const hideImgAside = () => {
     asideTexto.classList.remove('hidden');
 }
 
+
+
+/*CRUZ Y ESCONDER ASIDE*/
+
+const cruzAsideTexto = document.getElementById('cruz-aside-texto');
+const cruzAsideImg = document.getElementById('cruz-aside-img');
+
+cruzAsideImg.addEventListener('click', () => hideAside());
+cruzAsideTexto.addEventListener('click', () => hideAside());
+
+const hideAside = () => {
+    asideTexto.classList.add('hidden');
+    asideImg.classList.add('hidden');
+}
+console.log(hideAside)
+
+
+
+
+
 //clases modo oscuro// 
 
 const botonOscuro = document.getElementById('boton-oscuro');
 const botonClaro = document.getElementById('boton-claro');
+
 const modoOscuro = document.getElementsByClassName('modo-oscuro');
 
 botonOscuro.addEventListener('click', ()=> creoModoOscuro());
 botonClaro.addEventListener('click', ()=> creoModoClaro());
 
-/*
 const creoModoOscuro= () => {
     document.body.classList.add('modo-oscuro');
 }
 const creoModoClaro= () => {
     document.body.classList.remove('modo-oscuro');
 }
-const creoModoOscuro= () => {
-    document.header.classList.add('modo-oscuro');
-}
-const creoModoClaro= () => {
-    document.header.classList.remove('modo-oscuro');
-}const creoModoOscuro= () => {
-    document.aside.classList.add('modo-oscuro');
-}
-const creoModoClaro= () => {
-    document.aside.classList.remove('modo-oscuro');
-}
-*/
-
 
 //URL IMAGEN// 
 const inputUrl = document.getElementById('input-url');
@@ -55,6 +64,9 @@ inputUrl.addEventListener('input', (e)=> changeBackground(e))
 const changeBackground = (e) => {
     console.log(e.target.value)
     memeImg.style.backgroundImage = `url('${e.target.value}')`
+    memeImg.style.backgroundSize = `cover`
+    memeImg.style.backgroundRepeat = `no-repeat`
+    memeImg.style.backgroundPosition = `center`
 }
 
 //INPUT RANGE//
@@ -73,12 +85,12 @@ const filtros = (e) =>{
     memeImg.style.filter = `brightness(${e.target.value})`;
     memeImg.style.filter = `opacity(${e.target.value})`;
     memeImg.style.filter = `contrast(${e.target.value}%)`;
-    memeImg.style.filter = `blur(${e.target.value}px)`
-    memeImg.style.filter = `grayscale(${e.target.value}%)`
-    memeImg.style.filter = `sepia(${e.target.value}%)` 
-    memeImg.style.filter = `hue-rotation(${e.target.value}deg)` 
-    memeImg.style.filter = `saturation(${e.target.value}%)`
-    memeImg.style.filter = `invert(${e.target.value})`
+    memeImg.style.filter = `blur(${e.target.value}px)`;
+    memeImg.style.filter = `grayscale(${e.target.value}%)`;
+    memeImg.style.filter = `sepia(${e.target.value}%)`;
+    memeImg.style.filter = `hue-rotation(${e.target.value}deg)`; 
+    memeImg.style.filter = `saturation(${e.target.value}%)`;
+    memeImg.style.filter = `invert(${e.target.value})`;
 }
 inputBrillo.addEventListener('input', (e)=> filtros(e));
 inputOpacidad.addEventListener('input',(e)=> filtros(e));
@@ -90,3 +102,4 @@ inputHue.addEventListener('input', (e)=> filtros(e));
 inputSaturado.addEventListener('input', (e)=> filtros(e));
 inputNegativo.addEventListener('input', (e)=> filtros(e));
 
+/* */
