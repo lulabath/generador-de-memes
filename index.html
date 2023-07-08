@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,29 +8,43 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&family=Open+Sans:ital,wght@0,300;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&family=Open+Sans:ital,wght@0,300;0,600;1,400&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/9495825293.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
+        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
 <body>
     <div class="contenedor-main">
-    <!-- SECCION HEADER -->
+        <!-- SECCION HEADER -->
         <header>
             <h1 class="h1-titulo">Generador de Memes</h1>
-            <div class="opciones-header"> 
-                    <button id="boton-aside-imagen" class="boton-header"><i class="fa-sharp fa-solid fa-file-image icono"></i>Imagen</button>
-                    <button id="boton-aside-texto" class="boton-header"><i class="fa-sharp fa-solid fa-font icono"></i>Texto</button>
-                    <button class="boton-header" id="boton-claro"><i class="fa-solid fa-lightbulb icono"></i>Modo claro</button>
-                    <button class="boton-header" id="boton-oscuro"><i class="fa-solid fa-lightbulb icono"></i>Modo oscuro</button>
+            <div class="opciones-header">
+                <button id="boton-aside-imagen" class="boton-header"><i
+                        class="fa-sharp fa-solid fa-file-image icono"></i>Imagen</button>
+                <button id="boton-aside-texto" class="boton-header"><i
+                        class="fa-sharp fa-solid fa-font icono"></i>Texto</button>
+                <button class="boton-header" id="boton-claro"><i class="fa-solid fa-lightbulb icono"></i>Modo
+                    claro</button>
+                <button class="boton-header" id="boton-oscuro"><i class="fa-solid fa-lightbulb icono"></i>Modo
+                    oscuro</button>
             </div>
         </header>
-    <!-- SECCION MAIN -->
+        <!-- SECCION MAIN -->
         <main>
             <div class="contenedor-editor">
                 <p class="texto-meme">TOP TEXT</p>
                 <div class="meme-img" id="meme-img"></div>
                 <p class="texto-meme">BOTTOM TEXT</p>
             </div>
-            <button class="boton-descargar"><i class="fa-solid fa-download icono"></i>Descargar meme</button>
+            <button class="boton-descargar" id="boton-descargar"><i class="fa-solid fa-download icono"></i>Descargar
+                meme</button>
         </main>
     </div>
     <aside class="aside" id="aside-img">
@@ -40,10 +55,11 @@
             <input type="text" class="input-url" id="input-url">
         </div>
         <h3>FONDO</h3>
-            <div class="div-fondo">
-                <div class="fondo-img">
-                    <input type="color"  name="" id="color-fondo-img" class="input-color-circulo" value="#ffffff" ><span id='texto-codigo'></span>
-                </div>
+        <div class="div-fondo">
+            <div class="fondo-img">
+                <input type="color" name="" id="color-fondo-img" class="input-color-circulo" value="#ffffff"><span
+                    id='texto-codigo'></span>
+            </div>
             <label>
                 <select name="fondo" id="select-fondo-imagen" class="select-img">
                     <option value="Ninguno">Ninguno</option>
@@ -54,14 +70,15 @@
                     <option value="Oscurecer">Oscurecer</option>
                 </select>
             </label>
-            </div>
+        </div>
         <h3>FILTROS</h3>
         <label for="brillo">BRILLO</label>
-        <input type="range" name="brillo" class="range"   id="range-brillo" min="0" max="1" value="1" step="0.1">
+        <input type="range" name="brillo" class="range" id="range-brillo" min="0" max="1" value="1" step="0.1">
         <label for="opacidad">OPACIDAD</label>
         <input type="range" name="opacidad" class="range" id="range-opacidad" min="0" max="1" value="1" step="0.1">
         <label for="contraste">CONTRASTE</label>
-        <input type="range" name="contraste" class="range" id="range-contraste" min="100" max="1000" value="100" step="1">
+        <input type="range" name="contraste" class="range" id="range-contraste" min="100" max="1000" value="100"
+            step="1">
         <label for="desenfoque">DESENFOQUE</label>
         <input type="range" name="desenfoque" class="range" id="range-desenfoque" min="0" max="10" value="0" step="0.1">
         <label for="grises">ESCALA DE GRISES</label>
@@ -71,7 +88,8 @@
         <label for="hue">HUE</label>
         <input type="range" name="hue" class="range" id="range-hue" min="0" max="359" value="0" step="1">
         <label for="saturado">SATURADO</label>
-        <input type="range" name="saturado" class="range" id="range-saturado" min="100" max="1000" value="100" step="10">
+        <input type="range" name="saturado" class="range" id="range-saturado" min="100" max="1000" value="100"
+            step="10">
         <label for="negativo">NEGATIVO</label>
         <input type="range" name="negativo" class="range" id="range-negativo" min="0" max="1" value="1" step="0.1">
         <button class="boton-aside">Reestablecer filtros</button>
@@ -81,29 +99,31 @@
         <h2>TEXTO</h2>
         <div class="texto-texarea">
             <h3>SUPERIOR</h3>
-            <textarea class="select-texto">TOP TEXT</textarea></div>
-            <input type="checkbox" id="texto-superior">
-            <label for="">Sin texto superior</label>
-        
+            <textarea class="select-texto">TOP TEXT</textarea>
+        </div>
+        <input type="checkbox" id="texto-superior">
+        <label for="">Sin texto superior</label>
+
         <div class="texto-texarea">
             <h3>INFERIOR</h3>
-            <textarea class="select-texto">BOTTOM TEXT</textarea></div>
-            <input type="checkbox" id="texto-inferior">
-            <label for="">Sin texto inferior</label>
-        
+            <textarea class="select-texto">BOTTOM TEXT</textarea>
+        </div>
+        <input type="checkbox" id="texto-inferior">
+        <label for="">Sin texto inferior</label>
+
         <div>
             <h3>FUENTE</h3>
-                <select name="fuente" id="" class="select-texto">
-                    <option value="arial">Arial</option>
-                    <option value="Arial Black">Arial Black</option>
-                    <option value="American Typewriter">American Typewriter</option>
-                    <option value="Andale Mono">Andale Mono</option>
-                    <option value="Comic Sans MS">Comic Sans MS</option>
-                    <option value="Helvatica">Helvatica</option>
-                    <option value="Impact">Impact</option>
-                    <option value="Verdana">Verdana</option>
-                    <option value="Times New Roman">Times New Roman</option>
-                </select>
+            <select name="fuente" id="" class="select-texto">
+                <option value="arial">Arial</option>
+                <option value="Arial Black">Arial Black</option>
+                <option value="American Typewriter">American Typewriter</option>
+                <option value="Andale Mono">Andale Mono</option>
+                <option value="Comic Sans MS">Comic Sans MS</option>
+                <option value="Helvatica">Helvatica</option>
+                <option value="Impact">Impact</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Times New Roman">Times New Roman</option>
+            </select>
         </div>
         <div class="tipos-de-justificado">
             <input type="number" name="" id="tamanio-fuente" class="select-texto" value="40">
@@ -115,21 +135,23 @@
         <div class="color-fondo">
             <div class="div-color-texto">
                 <h3>COLOR</h3>
-                <div class="color-fondo-texto"><input type="color" name="" id="" class="input-color-circulo" value="#000000"></div>
+                <div class="color-fondo-texto"><input type="color" name="" id="" class="input-color-circulo"
+                        value="#000000"></div>
             </div>
             <div class="div-color-texto">
                 <h3>FONDO</h3>
-                <div class="color-fondo-texto"><input type="color" name="" id="" class="input-color-circulo" value="#ffffff"></div>
+                <div class="color-fondo-texto"><input type="color" name="" id="" class="input-color-circulo"
+                        value="#ffffff"></div>
             </div>
         </div>
         <input type="checkbox">
         <label>Fondo Transparente</label>
         <h3>CONTORNO</h3>
-            <div class="tipos-de-contorno">
-                <button class="boton-texto">Ninguno</button>
-                <button class="boton-texto">Claro</button>
-                <button class="boton-texto">Oscuro</button>
-            </div>
+        <div class="tipos-de-contorno">
+            <button class="boton-texto">Ninguno</button>
+            <button class="boton-texto">Claro</button>
+            <button class="boton-texto">Oscuro</button>
+        </div>
         <h3>ESPACIADO</h3>
         <input type="number" name="" id="" class="select-texto" min="5" max="60" value="35">
         <h3>INTERLINEADO</h3>
@@ -144,4 +166,5 @@
     </aside>
     <script src="script.js"></script>
 </body>
+
 </html>

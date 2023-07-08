@@ -6,8 +6,8 @@ const botonImagen = document.getElementById('boton-aside-imagen');
 const asideTexto = document.getElementById('aside-texto');
 const asideImg = document.getElementById('aside-img');
 
-botonTexto.addEventListener('click', ()=> hideImgAside());
-botonImagen.addEventListener('click', ()=> hideTextoAside());
+botonTexto.addEventListener('click', () => hideImgAside());
+botonImagen.addEventListener('click', () => hideTextoAside());
 
 const hideTextoAside = () => {
     asideTexto.classList.add('hidden');
@@ -32,7 +32,6 @@ const hideAside = () => {
     asideTexto.classList.add('hidden');
     asideImg.classList.add('hidden');
 }
-console.log(hideAside)
 
 
 
@@ -45,13 +44,13 @@ const botonClaro = document.getElementById('boton-claro');
 
 const modoOscuro = document.getElementsByClassName('modo-oscuro');
 
-botonOscuro.addEventListener('click', ()=> creoModoOscuro());
-botonClaro.addEventListener('click', ()=> creoModoClaro());
+botonOscuro.addEventListener('click', () => creoModoOscuro());
+botonClaro.addEventListener('click', () => creoModoClaro());
 
-const creoModoOscuro= () => {
+const creoModoOscuro = () => {
     document.body.classList.add('modo-oscuro');
 }
-const creoModoClaro= () => {
+const creoModoClaro = () => {
     document.body.classList.remove('modo-oscuro');
 }
 
@@ -59,7 +58,7 @@ const creoModoClaro= () => {
 const inputUrl = document.getElementById('input-url');
 const memeImg = document.getElementById('meme-img');
 
-inputUrl.addEventListener('input', (e)=> changeBackground(e))
+inputUrl.addEventListener('input', (e) => changeBackground(e))
 
 const changeBackground = (e) => {
     console.log(e.target.value)
@@ -80,26 +79,29 @@ const inputHue = document.getElementById('range-hue');
 const inputSaturado = document.getElementById('range-saturado');
 const inputNegativo = document.getElementById('range-negativo');
 
-const filtros = (e) =>{
-    console.log(e.target.value)
-    memeImg.style.filter = `brightness(${e.target.value})`;
-    memeImg.style.filter = `opacity(${e.target.value})`;
-    memeImg.style.filter = `contrast(${e.target.value}%)`;
-    memeImg.style.filter = `blur(${e.target.value}px)`;
-    memeImg.style.filter = `grayscale(${e.target.value}%)`;
-    memeImg.style.filter = `sepia(${e.target.value}%)`;
-    memeImg.style.filter = `hue-rotation(${e.target.value}deg)`; 
-    memeImg.style.filter = `saturation(${e.target.value}%)`;
-    memeImg.style.filter = `invert(${e.target.value})`;
+const filtros = () => {
+    console.log(filtros)
+    memeImg.style.filter = `brightness(${inputBrillo.value}) opacity(${inputOpacidad.value}) contrast(${inputContraste.value}%) blur(${inputDesenfoque.value}px) grayscale(${inputGrises.value}%) sepia(${inputSepia.value}%) hue-rotation(${inputHue.value}deg) saturation(${inputSaturado.value}%) invert(${inputNegativo.value})`;
 }
-inputBrillo.addEventListener('input', (e)=> filtros(e));
-inputOpacidad.addEventListener('input',(e)=> filtros(e));
-inputContraste.addEventListener('input', (e)=> filtros(e));
-inputDesenfoque.addEventListener('input',(e)=> filtros(e));
-inputGrises.addEventListener('input',(e)=> filtros(e));
-inputSepia.addEventListener('input', (e)=> filtros(e));
-inputHue.addEventListener('input', (e)=> filtros(e));
-inputSaturado.addEventListener('input', (e)=> filtros(e));
-inputNegativo.addEventListener('input', (e)=> filtros(e));
+inputBrillo.addEventListener('input', () => filtros());
+inputOpacidad.addEventListener('input', () => filtros());
+inputContraste.addEventListener('input', () => filtros());
+inputDesenfoque.addEventListener('input', () => filtros());
+inputGrises.addEventListener('input', () => filtros());
+inputSepia.addEventListener('input', () => filtros());
+inputHue.addEventListener('input', () => filtros());
+inputSaturado.addEventListener('input', () => filtros());
+inputNegativo.addEventListener('input', () => filtros());
 
-/* */
+/* funcion descargar meme*/
+const botonDescarga = document.getElementById("boton-descargar");
+const meme = document.getElementById("contenedor-editor");
+
+botonDescarga.addEventListener("click", () => descargarMeme());
+
+const descargarMeme = () => {
+    domtoimage.toBlob(meme).then(function (blob) {
+        window.saveAs(blob, "mi-meme.png");
+    });
+};
+console.log(descargarMeme);
