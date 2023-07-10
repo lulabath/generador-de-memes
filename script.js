@@ -103,6 +103,7 @@ const inputNegativo = document.getElementById("range-negativo");
 const filtros = () => {
     memeImg.style.filter = `brightness(${inputBrillo.value}) opacity(${inputOpacidad.value}) contrast(${inputContraste.value}%) blur(${inputDesenfoque.value}px) grayscale(${inputGrises.value}%) sepia(${inputSepia.value}%) hue-rotation(${inputHue.value}deg) saturation(${inputSaturado.value}%) invert(${inputNegativo.value})`;
 };
+console.log(inputBrillo)
 
 inputBrillo.addEventListener("input", () => filtros());
 inputOpacidad.addEventListener("input", () => filtros());
@@ -152,12 +153,11 @@ colorTexto.addEventListener('input', () => cambiarColorTexto())
 
 //fondo texto REVISAR POR QUÉ NO FUNCIONA//
 const  codigoColorFondo = document.getElementById('codigo-color-fondo'); //span//
-const colorFondoTexto = document.getElementById('color-fondo-texto');//input//
+const colorFondoTexto = document.getElementById("color-fondo-texto");//input//
 
 const cambiarFondoTexto = () => {
     let colorSeleccionado = colorFondoTexto.value;
     codigoColorFondo.innerHTML = `${colorSeleccionado}`;
-    textoSuperior.style.color = `${colorSeleccionado}`;
-    textoInferior.style.color = `${colorSeleccionado}`;
 };
+
 colorFondoTexto.addEventListener('input', () => cambiarFondoTexto);
