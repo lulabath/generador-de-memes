@@ -24,6 +24,12 @@ header{
     background-color:#e0e0e0;
     color: #4e4d4d;
 }
+span{
+    font-size: 1rem;
+    justify-content: center;
+    font-weight: 600;
+    color: #4e4d4d;
+}
 .h1{
     font-size: larger;
     color: #4e4d4d;
@@ -92,20 +98,19 @@ aside{
     background-color: #fafafa;
     color: rgb(56, 56, 56);
     display: block;
-    margin-top:0 ;
     flex-direction: column;
     margin-top: 5px;
     margin-bottom: 25px;
     padding: 20px;
     float: right;
     right: 0;
-    width: 200px;
+    width: 250px;
     height: 100vh;
     position: fixed;
     justify-content: center;
     align-items: center;
-    font-size: 0.9rem;
-    letter-spacing: 0;
+    font-size: 0.6rem;
+    letter-spacing: -1;
 }
 .h1-titulo{
     color: #4e4d4d;
@@ -114,15 +119,17 @@ aside{
 }
 h1{
     color: #4e4d4d;
+
 }
 h2{
     text-align: center;
     color: #4e4d4d;
+    font-size: 1.2rem;
 }
 h3{
     margin: 10px 0;
-    font-size: 0.9rem;
     color:#4e4d4d;
+    font-size: 0.85rem;
 }
 label{
     color: #4e4d4d;
@@ -131,6 +138,7 @@ label{
     font-weight: 300;
     text-decoration: none;
     appearance: none;
+    margin-top: 0px;
 }
 input[type='range']{
     background-color:#4e4d4d;
@@ -139,7 +147,7 @@ input[type='range']{
     height: 6px;
     appearance: none;
     border-radius: 10px;
-    margin-top: 0px;
+    margin: 10px 0 15px 0;
 }
 input[type='text']{
     width: 100%;
@@ -359,7 +367,7 @@ textarea{
 
 .modo-oscuro input[type=text]{
         color: #ffffff;
-        background-color:#6d6e72;
+        background-color: #393e49;
     }
 
 .modo-oscuro header{
@@ -368,7 +376,7 @@ textarea{
     }
 .modo-oscuro option{
         color: #ffffff;
-        background-color:#6d6e72 ;
+        background-color: #393e49;
     }
 .modo-oscuro aside{
         background-color: #252935;
@@ -379,27 +387,48 @@ textarea{
         color: #ffffff;
     }
 
-.modo-oscuro .icono, .boton-header, h1, h2, h3, .h1-titulo{
+.modo-oscuro .icono{
     color: #ffffff;
 }
-.modo-oscuro .select-texto,.select-img, input{
+.modo-oscuro .boton-header{
+    color:#ffffff
+}
+.modo-oscuro .select-texto{
         color: #ffffff;
-        background-color:#6d6e72;
+        background-color: #393e49;
     }
-
+.modo-oscuro .select-img{
+    color: #ffffff;
+    background-color: #393e49;
+}
+.modo-oscuro label{
+    color:#ffffff
+}
+.modo-oscuro h3{
+    color:#ffffff
+}
+.modo-oscuro h2{
+    color:#ffffff
+}
+.modo-oscuro h1{
+    color:#ffffff
+}
 .modo-oscuro .boton-justificado, .boton-texto{
     color: #ffffff;
-    background-color:#6d6e72;
+    background-color: #393e49;
 }
 .modo-oscuro .color-fondo-texto{
     color: #ffffff;
-    background-color:#6d6e72;
+    background-color: #393e49;
 }
-.modo-oscuro .boton-aside, .fondo-img{
+.modo-oscuro .boton-aside{
     color: #ffffff;
-    background-color:#6d6e72;
+    background-color: #393e49;
 }
-
+.modo-oscuro .fondo-img{
+    color: #ffffff;
+    background-color: #393e49;
+}
 /**MEDIA QUERYS**/
 
 @media(max-width:700px){

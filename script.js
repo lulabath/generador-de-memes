@@ -57,19 +57,23 @@ const checkboxInf = document.getElementById('texto-inferior');
 const textoSuperior = document.getElementById('contenedor-texto-sup');
 const textoInferior = document.getElementById('contenedor-texto-inf');
 
+const textoSupMeme = document.getElementById("texto-sup-meme");
+const textoInfMeme =document.getElementById("texto-inf-meme");
+
 const ocultarTextoSup = () =>{
     console.log(checkboxSup.checked);
     textoSuperior.classList.toggle('hidden');
+    textoSupMeme.classList.toggle('hidden');
 }
 
 const ocultarTextoInf = () =>{
     console.log(checkboxInf.checked);
     textoInferior.classList.toggle('hidden');
+    textoInfMeme.classList.toggle('hidden');
 }
 
 checkboxSup.addEventListener('change', () => ocultarTextoSup());
 checkboxInf.addEventListener('change', () => ocultarTextoInf());
-console.log(checkboxSup)
 
 
 //URL IMAGEN// 
@@ -121,4 +125,39 @@ const descargarMeme = () => {
         window.saveAs(blob, "mi-meme.png");
     });
 };
-console.log(descargarMeme);
+
+// codigo color//
+const codigoColorImg = document.getElementById('codigo-color-img'); //span//
+
+const colorFondoImg = document.getElementById('color-fondo-img');//input//
+
+const cambiarFondoMeme = () => {
+    let colorSeleccionado = colorFondoImg.value;
+    codigoColorImg.innerHTML = `${colorSeleccionado}`;
+    memeImg.style.backgroundColor = `${colorSeleccionado}`;
+};
+colorFondoImg.addEventListener('input', () => cambiarFondoMeme());
+
+//input color texto//
+const codigoColorTexto = document.getElementById('codigo-color-texto')//span//
+const colorTexto = document.getElementById('color-texto');//input//
+
+const cambiarColorTexto = () => {
+    let colorSeleccionado = colorTexto.value;
+    codigoColorTexto.innerHTML = `${colorSeleccionado}`;
+    textoSupMeme.style.color = `${colorSeleccionado}`;
+    textoInfMeme.style.color = `${colorSeleccionado}`;
+};
+colorTexto.addEventListener('input', () => cambiarColorTexto())
+
+//fondo texto REVISAR POR QUÉ NO FUNCIONA//
+const  codigoColorFondo = document.getElementById('codigo-color-fondo'); //span//
+const colorFondoTexto = document.getElementById('color-fondo-texto');//input//
+
+const cambiarFondoTexto = () => {
+    let colorSeleccionado = colorFondoTexto.value;
+    codigoColorFondo.innerHTML = `${colorSeleccionado}`;
+    textoSuperior.style.color = `${colorSeleccionado}`;
+    textoInferior.style.color = `${colorSeleccionado}`;
+};
+colorFondoTexto.addEventListener('input', () => cambiarFondoTexto);
