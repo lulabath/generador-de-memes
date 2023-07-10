@@ -33,10 +33,6 @@ const hideAside = () => {
     asideImg.classList.add('hidden');
 }
 
-
-
-
-
 //clases modo oscuro// 
 
 const botonOscuro = document.getElementById('boton-oscuro');
@@ -54,44 +50,65 @@ const creoModoClaro = () => {
     document.body.classList.remove('modo-oscuro');
 }
 
+//OCULTAR TEXTOS//
+const checkboxSup = document.getElementById('texto-superior');
+const checkboxInf = document.getElementById('texto-inferior');
+
+const textoSuperior = document.getElementById('contenedor-texto-sup');
+const textoInferior = document.getElementById('contenedor-texto-inf');
+
+const ocultarTextoSup = () =>{
+    console.log(checkboxSup.checked);
+    textoSuperior.classList.toggle('hidden');
+}
+
+const ocultarTextoInf = () =>{
+    console.log(checkboxInf.checked);
+    textoInferior.classList.toggle('hidden');
+}
+
+checkboxSup.addEventListener('change', () => ocultarTextoSup());
+checkboxInf.addEventListener('change', () => ocultarTextoInf());
+console.log(checkboxSup)
+
+
 //URL IMAGEN// 
 const inputUrl = document.getElementById('input-url');
 const memeImg = document.getElementById('meme-img');
 
-inputUrl.addEventListener('input', (e) => changeBackground(e))
+inputUrl.addEventListener("input", () => changeBackground());
 
-const changeBackground = (e) => {
-    console.log(e.target.value)
-    memeImg.style.backgroundImage = `url('${e.target.value}')`
+const changeBackground = () => {
+    memeImg.style.backgroundImage = `url('${inputUrl.value}')`
     memeImg.style.backgroundSize = `cover`
     memeImg.style.backgroundRepeat = `no-repeat`
     memeImg.style.backgroundPosition = `center`
-}
+};
 
 //INPUT RANGE//
-const inputBrillo = document.getElementById('range-brillo');
-const inputOpacidad = document.getElementById('range-opacidad');
-const inputContraste = document.getElementById('range-contraste');
-const inputDesenfoque = document.getElementById('range-desenfoque');
-const inputGrises = document.getElementById('range-grises');
-const inputSepia = document.getElementById('range-sepia');
-const inputHue = document.getElementById('range-hue');
-const inputSaturado = document.getElementById('range-saturado');
-const inputNegativo = document.getElementById('range-negativo');
+const inputBrillo = document.getElementById("range-brillo");
+const inputOpacidad = document.getElementById("range-opacidad");
+const inputContraste = document.getElementById("range-contraste");
+const inputDesenfoque = document.getElementById("range-desenfoque");
+const inputGrises = document.getElementById("range-grises");
+const inputSepia = document.getElementById("range-sepia");
+const inputHue = document.getElementById("range-hue");
+const inputSaturado = document.getElementById("range-saturado");
+const inputNegativo = document.getElementById("range-negativo");
 
 const filtros = () => {
-    console.log(filtros)
     memeImg.style.filter = `brightness(${inputBrillo.value}) opacity(${inputOpacidad.value}) contrast(${inputContraste.value}%) blur(${inputDesenfoque.value}px) grayscale(${inputGrises.value}%) sepia(${inputSepia.value}%) hue-rotation(${inputHue.value}deg) saturation(${inputSaturado.value}%) invert(${inputNegativo.value})`;
-}
-inputBrillo.addEventListener('input', () => filtros());
-inputOpacidad.addEventListener('input', () => filtros());
-inputContraste.addEventListener('input', () => filtros());
-inputDesenfoque.addEventListener('input', () => filtros());
-inputGrises.addEventListener('input', () => filtros());
-inputSepia.addEventListener('input', () => filtros());
-inputHue.addEventListener('input', () => filtros());
-inputSaturado.addEventListener('input', () => filtros());
-inputNegativo.addEventListener('input', () => filtros());
+};
+
+inputBrillo.addEventListener("input", () => filtros());
+inputOpacidad.addEventListener("input", () => filtros());
+inputContraste.addEventListener("input", () => filtros());
+inputDesenfoque.addEventListener("input", () => filtros());
+inputGrises.addEventListener("input", () => filtros());
+inputSepia.addEventListener("input", () => filtros());
+inputHue.addEventListener("input", () => filtros());
+inputSaturado.addEventListener("input", () => filtros());
+inputNegativo.addEventListener("input", () => filtros());
 
 /* funcion descargar meme*/
 const botonDescarga = document.getElementById("boton-descargar");
