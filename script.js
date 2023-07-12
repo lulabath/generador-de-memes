@@ -160,4 +160,13 @@ const cambiarFondoTexto = () => {
     codigoColorFondo.innerHTML = `${colorSeleccionado}`;
 };
 
-colorFondoTexto.addEventListener('input', () => cambiarFondoTexto);
+colorFondoTexto.addEventListener("input", () => cambiarFondoTexto);
+
+//FUNXCION DE SELECT TEXTO//    
+const selectFuente = document.getElementById("select-fuente");
+const cambiarFuente = () => {
+    textoSupMeme.style.fontFamily = `${selectFuente.value}`;
+    textoInferior.style.fontFamily = `${selectFuente.value}`;
+};
+selectFuente.addEventListener("change", () => cambiarFuente())
+console.log(selectFuente)
