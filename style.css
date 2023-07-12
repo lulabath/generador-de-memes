@@ -413,6 +413,9 @@ textarea{
 .modo-oscuro h1{
     color:#ffffff
 }
+.modo-oscuro span{
+    color:#ffffff
+}
 .modo-oscuro .boton-justificado, .boton-texto{
     color: #ffffff;
     background-color: #393e49;

@@ -103,7 +103,6 @@ const inputNegativo = document.getElementById("range-negativo");
 const filtros = () => {
     memeImg.style.filter = `brightness(${inputBrillo.value}) opacity(${inputOpacidad.value}) contrast(${inputContraste.value}%) blur(${inputDesenfoque.value}px) grayscale(${inputGrises.value}%) sepia(${inputSepia.value}%) hue-rotation(${inputHue.value}deg) saturation(${inputSaturado.value}%) invert(${inputNegativo.value})`;
 };
-console.log(inputBrillo)
 
 inputBrillo.addEventListener("input", () => filtros());
 inputOpacidad.addEventListener("input", () => filtros());
@@ -126,6 +125,25 @@ const descargarMeme = () => {
         window.saveAs(blob, "mi-meme.png");
     });
 };
+
+
+//REESTABLECER FILTROS// 
+const botonFiltros = document.getElementById('boton-filtros');
+
+const reestablecerFiltros = () => {
+    inputBrillo.value = 1
+    inputOpacidad.value = 1
+    inputContraste.value = 100
+    inputDesenfoque.value = 0
+    inputGrises.value = 0
+    inputSepia.value = 0
+    inputHue.value = 0
+    inputSaturado.value = 100
+    inputNegativo.value = 1
+}
+
+botonFiltros.addEventListener('click', () => reestablecerFiltros());
+
 
 // codigo color//
 const codigoColorImg = document.getElementById('codigo-color-img'); //span//
@@ -162,11 +180,18 @@ const cambiarFondoTexto = () => {
 
 colorFondoTexto.addEventListener("input", () => cambiarFondoTexto);
 
-//FUNXCION DE SELECT TEXTO//    
+//FUNCION DE SELECT TEXTO//    
 const selectFuente = document.getElementById("select-fuente");
 const cambiarFuente = () => {
-    textoSupMeme.style.fontFamily = `${selectFuente.value}`;
+    textoSuperior.style.fontFamily = `${selectFuente.value}`;
     textoInferior.style.fontFamily = `${selectFuente.value}`;
 };
-selectFuente.addEventListener("change", () => cambiarFuente())
-console.log(selectFuente)
+
+selectFuente.addEventListener('change', () => cambiarFuente());
+
+//FUNCION SELECT FONDO IMG//
+const selectImg = document.getElementById("select-fondo-imagen");
+
+const cambiarFondoImg = () => {
+
+}
