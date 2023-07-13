@@ -127,9 +127,9 @@
         <div class="tipos-de-justificado">
             <input type="number" name="" id="tamanio-fuente" class="select-texto" value="40">
             <label for=""></label>
-            <div class="boton-justificado"><i class="fas fa-align-left"></i></div>
-            <div class="boton-justificado"><i class="fas fa-align-center"></i></div>
-            <div class="boton-justificado"><i class="fas fa-align-right"></i></div>
+            <div class="boton-justificado" id="boton-alineado-izq"><i class="fas fa-align-left"></i></div>
+            <div class="boton-justificado" id="boton-alineado-centro"><i class="fas fa-align-center"></i></div>
+            <div class="boton-justificado" id="boton-alineado-der"><i class="fas fa-align-right"></i></div>
         </div>
         <div class="color-fondo">
             <div class="div-color-texto">
@@ -145,8 +145,8 @@
                 </div>
             </div>
         </div>
-        <input type="checkbox">
-        <label>Fondo Transparente</label>
+        <input type="checkbox" name="fondo-transparente" id="fondo-transparente">
+        <label for="fondo-transparente">Fondo Transparente</label>
         <h3>CONTORNO</h3>
         <div class="tipos-de-contorno">
             <button class="boton-texto">Ninguno</button>
@@ -154,9 +154,9 @@
             <button class="boton-texto">Oscuro</button>
         </div>
         <h3>ESPACIADO</h3>
-        <input type="number" name="" id="" class="select-texto" min="5" max="60" value="35">
+        <input type="number" name="" id="espaciado" class="select-texto" min="5" max="60" value="35">
         <h3>INTERLINEADO</h3>
-        <select id="" class="select-texto">
+        <select id="interlineado" class="select-texto">
             <option value="0.8">0.8</option>
             <option value="1">1</option>
             <option value="1.2">1.2</option>

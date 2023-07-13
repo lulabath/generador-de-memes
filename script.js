@@ -58,7 +58,7 @@ const textoSuperior = document.getElementById('contenedor-texto-sup');
 const textoInferior = document.getElementById('contenedor-texto-inf');
 
 const textoSupMeme = document.getElementById("texto-sup-meme");
-const textoInfMeme =document.getElementById("texto-inf-meme");
+const textoInfMeme = document.getElementById("texto-inf-meme");
 
 const ocultarTextoSup = () =>{
     console.log(checkboxSup.checked);
@@ -74,7 +74,6 @@ const ocultarTextoInf = () =>{
 
 checkboxSup.addEventListener('change', () => ocultarTextoSup());
 checkboxInf.addEventListener('change', () => ocultarTextoInf());
-
 
 //URL IMAGEN// 
 const inputUrl = document.getElementById('input-url');
@@ -114,7 +113,7 @@ inputHue.addEventListener("input", () => filtros());
 inputSaturado.addEventListener("input", () => filtros());
 inputNegativo.addEventListener("input", () => filtros());
 
-/* funcion descargar meme*/
+/* funcion descargar meme NO FUNCIONAAA*/
 const botonDescarga = document.getElementById("boton-descargar");
 const meme = document.getElementById("contenedor-editor");
 
@@ -169,29 +168,79 @@ const cambiarColorTexto = () => {
 };
 colorTexto.addEventListener('input', () => cambiarColorTexto())
 
-//fondo texto REVISAR POR QUÉ NO FUNCIONA//
+//fondo texto//
 const  codigoColorFondo = document.getElementById('codigo-color-fondo'); //span//
 const colorFondoTexto = document.getElementById("color-fondo-texto");//input//
 
 const cambiarFondoTexto = () => {
     let colorSeleccionado = colorFondoTexto.value;
     codigoColorFondo.innerHTML = `${colorSeleccionado}`;
+    textoSupMeme.style.backgroundColor = `${colorSeleccionado}`;
+    textoSuperior.style.backgroundColor = `${colorSeleccionado}`;
+    textoInfMeme.style.backgroundColor = `${colorSeleccionado}`;
+    textoInferior.style.backgroundColor = `${colorSeleccionado}`;
 };
 
-colorFondoTexto.addEventListener("input", () => cambiarFondoTexto);
+colorFondoTexto.addEventListener("input", () => cambiarFondoTexto());
 
-//FUNCION DE SELECT TEXTO//    
+//CHECKED FONDO TRANSPARENTE REVISARRRR
+const checkTransparente = document.getElementById('fondo-transparente');
+
+const FondoTransparente = () => {
+    console.log(checkboxInf.checked)
+    textoInferior.style.backgroundColor = 'transparent';
+    textoInfMeme.style.backgroundColor = 'transpartent';
+    textoSupMeme.style.backgroundColor = 'transparent';
+    textoSuperior.style.backgroundColor = 'transparent';
+}
+
+//INTERLINEADO texto
+const interlineado = document.getElementById('interlineado');
+interlineado.addEventListener("change", () => interlineadoDeTexto());
+
+const interlineadoDeTexto = () =>{
+    textoInfMeme.style.lineHeight = `${interlineado.value}`;
+    textoSupMeme.style.lineHeight = `${interlineado.value}`;
+}
+
+
+
+// ESPACIADO DE TEXTO 
+const espaciado = document.getElementById('espaciado');
+espaciado.addEventListener("change", () => espaciadoDeTexto());
+
+const espaciadoDeTexto = () => {
+    textoInfMeme.style.padding = `${espaciado.value}`;
+    textoSupMeme.style.padding = `${espaciado.value}`;
+}
+
+
+
+//FUNCION DE SELECT TEXTO - REVISARRRRR//    
 const selectFuente = document.getElementById("select-fuente");
 const cambiarFuente = () => {
     textoSuperior.style.fontFamily = `${selectFuente.value}`;
     textoInferior.style.fontFamily = `${selectFuente.value}`;
 };
 
-selectFuente.addEventListener('change', () => cambiarFuente());
+//selectFuente.addEventListener('change', () => cambiarFuente());
 
-//FUNCION SELECT FONDO IMG//
-const selectImg = document.getElementById("select-fondo-imagen");
+//FUNCION ALINEAR TEXTO//
+const botonAlineadoIzq = document.getElementById("boton-alineado-izq");
+const botonAlineadoCentro = document.getElementById("boton-alineado-centro");
+const botonAlineadoDer = document.getElementById("boton-alineado-der");
 
-const cambiarFondoImg = () => {
+botonAlineadoIzq.addEventListener('click', () =>{
+    textoSupMeme.style.textAlign = 'left';
+    textoInfMeme.style.textAlign = 'left';
+});
 
-}
+botonAlineadoCentro.addEventListener('click', () =>{
+    textoSupMeme.style.textAlign = 'center';
+    textoInfMeme.style.textAlign = 'center';
+});
+
+botonAlineadoDer.addEventListener('click', () =>{
+    textoSupMeme.style.textAlign = 'right';
+    textoInfMeme.style.textAlign = 'right';
+});
