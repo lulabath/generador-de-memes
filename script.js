@@ -19,7 +19,6 @@ const hideImgAside = () => {
 }
 
 
-
 /*CRUZ Y ESCONDER ASIDE*/
 
 const cruzAsideTexto = document.getElementById('cruz-aside-texto');
@@ -33,7 +32,7 @@ const hideAside = () => {
     asideImg.classList.add('hidden');
 }
 
-//clases modo oscuro// 
+//CLASE MODO OSCURO// 
 
 const botonOscuro = document.getElementById('boton-oscuro');
 const botonClaro = document.getElementById('boton-claro');
@@ -45,9 +44,13 @@ botonClaro.addEventListener('click', () => creoModoClaro());
 
 const creoModoOscuro = () => {
     document.body.classList.add('modo-oscuro');
+    botonOscuro.classList.add('hidden');
+    botonClaro.classList.remove('hidden');
 }
 const creoModoClaro = () => {
     document.body.classList.remove('modo-oscuro');
+    botonClaro.classList.add('hidden');
+    botonOscuro.classList.remove('hidden');
 }
 
 //OCULTAR TEXTOS//
@@ -74,6 +77,30 @@ const ocultarTextoInf = () =>{
 
 checkboxSup.addEventListener('change', () => ocultarTextoSup());
 checkboxInf.addEventListener('change', () => ocultarTextoInf());
+
+//CONTORNO TEXTO//
+const sinContorno = document.getElementById("sin-contorno");
+const contornoClaro = document.getElementById("contorno-claro");
+const contornoOscuro = document.getElementById("contorno-oscuro");
+
+const aplicarSinContorno = () =>{
+    textoSupMeme.style.textShadow = 'none';
+    textoInfMeme.style.textShadow = 'none';
+}
+sinContorno.addEventListener('click', () => aplicarSinContorno());
+
+const aplicarContornoClaro = () =>{
+    textoSupMeme.style.textShadow = '1px 1px 3px white';
+    textoInfMeme.style.textShadow = '1px 1px 3px white';
+}
+contornoClaro.addEventListener('click', () => aplicarContornoClaro());
+
+const aplicarContornoOscuro = () =>{
+    textoSupMeme.style.textShadow = '1px 1px 3px black';
+    textoInfMeme.style.textShadow = '1px 1px 3px black';
+}
+contornoOscuro.addEventListener('click', () => aplicarContornoOscuro());
+
 
 //URL IMAGEN// 
 const inputUrl = document.getElementById('input-url');
@@ -184,17 +211,42 @@ const cambiarFondoTexto = () => {
 colorFondoTexto.addEventListener("input", () => cambiarFondoTexto());
 
 //CHECKED FONDO TRANSPARENTE REVISARRRR
-const checkTransparente = document.getElementById('fondo-transparente');
+const checkTransparente = document.getElementById("fondo-transparente");
 
 const FondoTransparente = () => {
     console.log(checkboxInf.checked)
-    textoInferior.style.backgroundColor = 'transparent';
-    textoInfMeme.style.backgroundColor = 'transpartent';
-    textoSupMeme.style.backgroundColor = 'transparent';
-    textoSuperior.style.backgroundColor = 'transparent';
+    textoInferior.style.backgroundColor.toggle = 'transparent';
+    textoInfMeme.style.backgroundColor.toggle = 'transpartent';
+    textoSupMeme.style.backgroundColor.toggle = 'transparent';
+    textoSuperior.style.backgroundColor.toggle = 'transparent';
 }
 
-//INTERLINEADO texto
+//FUNCION CAMBIAR TAMANIO DE TEXTO NO FUNCIONAAAA//
+const tamanioFuente = document.getElementById('tamanio-fuente');
+
+const cambiarTamanioFuente = () =>{
+    let tamanioElegido = (tamanioFuente.value);
+    textoInfMeme.style.fontSize = `${tamanioElegido.value}px`;
+    textoSupMeme.style.fontSize = `${tamanioElegido.value}px`;
+    console.log('hola')
+}
+tamanioFuente.addEventListener("change", () => cambiarTamanioFuente());
+
+
+
+//FUNCION ESCRIBIR TEXTO//
+const topTextInput = document.getElementById("top-text-input");
+const bottomTextInput = document.getElementById("bottom-text-input");
+
+const texto = () =>{
+    textoSupMeme.innerText = topTextInput.value;
+    textoInfMeme.innerText = bottomTextInput.value;
+}
+topTextInput.addEventListener("input", () => texto());
+bottomTextInput.addEventListener("input", () => texto());
+
+
+//INTERLINEADO texto REVISAR//
 const interlineado = document.getElementById('interlineado');
 interlineado.addEventListener("change", () => interlineadoDeTexto());
 
@@ -204,9 +256,8 @@ const interlineadoDeTexto = () =>{
 }
 
 
-
-// ESPACIADO DE TEXTO 
-const espaciado = document.getElementById('espaciado');
+// ESPACIADO DE TEXTO  REVISAR POR QUÉ NO SE REFLEJA EL CAMBIO//
+const espaciado = document.getElementById("espaciado");
 espaciado.addEventListener("change", () => espaciadoDeTexto());
 
 const espaciadoDeTexto = () => {
@@ -216,31 +267,33 @@ const espaciadoDeTexto = () => {
 
 
 
-//FUNCION DE SELECT TEXTO - REVISARRRRR//    
-const selectFuente = document.getElementById("select-fuente");
+//FUNCION DE SELECT TEXTO//    
+const selectFuente = document.getElementById("select-texto");
+
 const cambiarFuente = () => {
-    textoSuperior.style.fontFamily = `${selectFuente.value}`;
-    textoInferior.style.fontFamily = `${selectFuente.value}`;
+    textoSupMeme.style.fontFamily = `${selectFuente.value}`;
+    textoInfMeme.style.fontFamily = `${selectFuente.value}`;
 };
 
-//selectFuente.addEventListener('change', () => cambiarFuente());
+selectFuente.addEventListener("change", () => cambiarFuente());
 
-//FUNCION ALINEAR TEXTO//
+
+//FUNCION ALINEAR TEXTO //
 const botonAlineadoIzq = document.getElementById("boton-alineado-izq");
 const botonAlineadoCentro = document.getElementById("boton-alineado-centro");
 const botonAlineadoDer = document.getElementById("boton-alineado-der");
 
-botonAlineadoIzq.addEventListener('click', () =>{
+botonAlineadoIzq.addEventListener("click", () =>{
     textoSupMeme.style.textAlign = 'left';
     textoInfMeme.style.textAlign = 'left';
 });
 
-botonAlineadoCentro.addEventListener('click', () =>{
+botonAlineadoCentro.addEventListener("click", () =>{
     textoSupMeme.style.textAlign = 'center';
     textoInfMeme.style.textAlign = 'center';
 });
 
-botonAlineadoDer.addEventListener('click', () =>{
+botonAlineadoDer.addEventListener("click", () =>{
     textoSupMeme.style.textAlign = 'right';
     textoInfMeme.style.textAlign = 'right';
 });

@@ -30,7 +30,7 @@
                         class="fa-sharp fa-solid fa-file-image icono"></i>Imagen</button>
                 <button id="boton-aside-texto" class="boton-header"><i
                         class="fa-sharp fa-solid fa-font icono"></i>Texto</button>
-                <button class="boton-header" id="boton-claro"><i class="fa-solid fa-lightbulb icono"></i>Modo
+                <button class="boton-header hidden" id="boton-claro"><i class="fa-solid fa-lightbulb icono"></i>Modo
                     claro</button>
                 <button class="boton-header" id="boton-oscuro"><i class="fa-solid fa-lightbulb icono"></i>Modo
                     oscuro</button>
@@ -43,7 +43,7 @@
                 <div class="meme-img" id="meme-img"></div>
                 <div  class="contenedor-texto"  id="contenedor-texto-inf"><p class="texto-meme" id="texto-inf-meme">BOTTOM TEXT</p></div>
             </div>
-            <button class="boton-descargar" id="boton-descargar"><i class="fa-solid fa-download icono"></i>Descargar
+            <button type="button" class="boton-descargar" id="boton-descargar"><i class="fa-solid fa-download icono"></i>Descargar
                 meme</button>
         </main>
     </div>
@@ -59,16 +59,14 @@
             <div class="fondo-img">
                 <input type="color" name="" id="color-fondo-img" class="input-color-circulo" value="#ffffff"><span id='codigo-color-img'></span>
             </div>
-            <label>
-                <select name="fondo" id="select-fondo-imagen" class="select-img">
-                    <option value="Ninguno">Ninguno</option>
-                    <option value="Aclarar">Aclarar</option>
-                    <option value="Oscurecer">Oscurecer</option>
-                    <option value="Diferencia">Diferencia</option>
-                    <option value="Luminosidad">Luminosidad</option>
-                    <option value="Oscurecer">Oscurecer</option>
-                </select>
-            </label>
+            <select name="fondo" id="select-fondo-imagen" class="select-img">
+                <option value="Ninguno">Ninguno</option>
+                <option value="Aclarar">Aclarar</option>
+                <option value="Oscurecer">Oscurecer</option>
+                <option value="Diferencia">Diferencia</option>
+                <option value="Luminosidad">Luminosidad</option>
+                <option value="Oscurecer">Oscurecer</option>
+            </select>
         </div>
         <h3>FILTROS</h3>
         <label for="brillo">BRILLO</label>
@@ -98,14 +96,14 @@
         <h2>TEXTO</h2>
         <div class="texto-texarea">
             <h3>SUPERIOR</h3>
-            <textarea class="select-texto">TOP TEXT</textarea>
+            <textarea class="select-texto" id="top-text-input">TOP TEXT</textarea>
         </div>
         <input type="checkbox" id="texto-superior">
         <label for="">Sin texto superior</label>
 
         <div class="texto-texarea">
             <h3>INFERIOR</h3>
-            <textarea class="select-texto">BOTTOM TEXT</textarea>
+            <textarea class="select-texto" id="bottom-text-input">BOTTOM TEXT</textarea>
         </div>
         <input type="checkbox" id="texto-inferior">
         <label for="">Sin texto inferior</label>
@@ -126,22 +124,21 @@
         </div>
         <div class="tipos-de-justificado">
             <input type="number" name="" id="tamanio-fuente" class="select-texto" value="40">
-            <label for=""></label>
-            <div class="boton-justificado" id="boton-alineado-izq"><i class="fas fa-align-left"></i></div>
-            <div class="boton-justificado" id="boton-alineado-centro"><i class="fas fa-align-center"></i></div>
-            <div class="boton-justificado" id="boton-alineado-der"><i class="fas fa-align-right"></i></div>
+            <button type="button" class="boton-justificado" id="boton-alineado-izq"><i class="fas fa-align-left"></i></button>
+            <button type="button"  class="boton-justificado" id="boton-alineado-centro"><i class="fas fa-align-center"></i></button>
+            <button type="button" class="boton-justificado" id="boton-alineado-der"><i class="fas fa-align-right"></i></button>
         </div>
         <div class="color-fondo">
             <div class="div-color-texto">
-                <h3>COLOR</h3>
+                <label for="color-texto">COLOR</label>
                 <div class="color-fondo-texto">
-                    <input type="color" name="" id="color-texto" class="input-color-circulo" value="#000000"><span id="codigo-color-texto"></span>
+                    <input type="color" name="color-texto" id="color-texto" class="input-color-circulo" value="#000000"><span id="codigo-color-texto"></span>
                 </div>
             </div>
             <div class="div-color-texto">
-                <h3>FONDO</h3>
+                <label for="fondo-texto">FONDO</label>
                 <div class="color-fondo-texto">
-                    <input type="color" name="" id="color-fondo-texto" class="input-color-circulo" value="#ffffff"><span id="codigo-color-fondo"></span>
+                    <input type="color" name="fondo-texto" id="color-fondo-texto" class="input-color-circulo" value="#ffffff"><span id="codigo-color-fondo"></span>
                 </div>
             </div>
         </div>
@@ -149,12 +146,12 @@
         <label for="fondo-transparente">Fondo Transparente</label>
         <h3>CONTORNO</h3>
         <div class="tipos-de-contorno">
-            <button class="boton-texto">Ninguno</button>
-            <button class="boton-texto">Claro</button>
-            <button class="boton-texto">Oscuro</button>
+            <button type="button" class="boton-texto" id="sin-contorno">Ninguno</button>
+            <button type="button" class="boton-texto" id="contorno-claro">Claro</button>
+            <button type="button" class="boton-texto" id="contorno-oscuro">Oscuro</button>
         </div>
-        <h3>ESPACIADO</h3>
-        <input type="number" name="" id="espaciado" class="select-texto" min="5" max="60" value="35">
+        <label for="espaciado">ESPACIADO</label>
+        <input type="number" name="espaciado" id="espaciado" class="select-texto" min="5" max="60" value="35">
         <h3>INTERLINEADO</h3>
         <select id="interlineado" class="select-texto">
             <option value="0.8">0.8</option>

@@ -127,7 +127,7 @@ h2{
     font-size: 1.2rem;
 }
 h3{
-    margin: 10px 0;
+    margin: 25px 0 15px 0;
     color:#4e4d4d;
     font-size: 0.85rem;
 }
@@ -135,10 +135,10 @@ label{
     color: #4e4d4d;
     font-size: 0.9rem;
     font-family: 'Open Sans', 'sans-serif';
-    font-weight: 300;
+    font-weight: 900;
     text-decoration: none;
     appearance: none;
-    margin-top: 0px;
+    margin: 25px 0 0 0;
 }
 input[type='range']{
     background-color:#4e4d4d;
@@ -180,7 +180,6 @@ input{
     text-align: left;
 }
 .texto-meme{
-    display: flex;
     background-color: transparent;
     color: #000000;
     height: 60px;
@@ -256,7 +255,7 @@ input{
     outline: 0;
     border: 0;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 1rem;
     cursor: pointer;
 }
 .tipos-de-justificado{
@@ -416,7 +415,11 @@ textarea{
 .modo-oscuro span{
     color:#ffffff
 }
-.modo-oscuro .boton-justificado, .boton-texto{
+.modo-oscuro .boton-justificado{
+    color: #ffffff;
+    background-color: #393e49;
+}
+.modo-oscuro .boton-texto{
     color: #ffffff;
     background-color: #393e49;
 }
