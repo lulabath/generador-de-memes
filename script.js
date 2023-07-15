@@ -105,14 +105,14 @@ contornoOscuro.addEventListener('click', () => aplicarContornoOscuro());
 //URL IMAGEN// 
 const inputUrl = document.getElementById('input-url');
 const memeImg = document.getElementById('meme-img');
-
+const contenedorEditor = document.getElementById('contenedor-editor');
 inputUrl.addEventListener("input", () => changeBackground());
 
 const changeBackground = () => {
-    memeImg.style.backgroundImage = `url('${inputUrl.value}')`
-    memeImg.style.backgroundSize = `cover`
-    memeImg.style.backgroundRepeat = `no-repeat`
-    memeImg.style.backgroundPosition = `center`
+    contenedorEditor.style.backgroundImage = `url('${inputUrl.value}')`
+    contenedorEditor.style.backgroundSize = `cover`
+    contenedorEditor.style.backgroundRepeat = `no-repeat`
+    contenedorEditor.style.backgroundPosition = `center`
 };
 
 //INPUT RANGE//
@@ -210,16 +210,30 @@ const cambiarFondoTexto = () => {
 
 colorFondoTexto.addEventListener("input", () => cambiarFondoTexto());
 
-//CHECKED FONDO TRANSPARENTE REVISARRRR
+
+
+
+
+//CHECKED FONDO TRANSPARENTE
+
 const checkTransparente = document.getElementById("fondo-transparente");
 
-const FondoTransparente = () => {
-    console.log(checkboxInf.checked)
-    textoInferior.style.backgroundColor.toggle = 'transparent';
-    textoInfMeme.style.backgroundColor.toggle = 'transpartent';
-    textoSupMeme.style.backgroundColor.toggle = 'transparent';
-    textoSuperior.style.backgroundColor.toggle = 'transparent';
+const fondoTransparente = () => {
+    if(checkTransparente.checked){
+        textoInferior.style.backgroundColor = 'transparent';
+        textoInfMeme.style.backgroundColor = 'transparent';
+        textoSupMeme.style.backgroundColor = 'transparent';
+        textoSuperior.style.backgroundColor = 'transparent';
+        }else{
+            textoInferior.style.backgroundColor = colorFondoTexto.value ;
+            textoInfMeme.style.backgroundColor = colorFondoTexto.value ;
+            textoSupMeme.style.backgroundColor = colorFondoTexto.value;
+            textoSuperior.style.backgroundColor = colorFondoTexto.value;
+            console.log('hola')
+        }
 }
+checkTransparente.addEventListener("change", () => fondoTransparente());
+
 
 //FUNCION CAMBIAR TAMANIO DE TEXTO NO FUNCIONAAAA//
 const tamanioFuente = document.getElementById('tamanio-fuente');
@@ -230,7 +244,7 @@ const cambiarTamanioFuente = () =>{
     textoSupMeme.style.fontSize = `${tamanioElegido.value}px`;
     console.log('hola')
 }
-tamanioFuente.addEventListener("change", () => cambiarTamanioFuente());
+tamanioFuente.addEventListener("click", () => cambiarTamanioFuente());
 
 
 
@@ -246,7 +260,7 @@ topTextInput.addEventListener("input", () => texto());
 bottomTextInput.addEventListener("input", () => texto());
 
 
-//INTERLINEADO texto REVISAR//
+//INTERLINEADO texto//
 const interlineado = document.getElementById('interlineado');
 interlineado.addEventListener("change", () => interlineadoDeTexto());
 
