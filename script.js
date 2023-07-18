@@ -33,8 +33,6 @@ const hideAside = () => {
 }
 
 
-
-
 //CLASE MODO OSCURO// 
 
 const botonOscuro = document.getElementById('boton-oscuro');
@@ -76,6 +74,18 @@ const ocultarTextoInf = () => {
 
 checkboxSup.addEventListener('change', () => ocultarTextoSup());
 checkboxInf.addEventListener('change', () => ocultarTextoInf());
+
+//ASIDE EN QUERY//
+const anchoPantalla = () => {
+    console.log('m ejecute')
+    if (document.body.getBoundingClientRect().width < 1300) {
+        asideImg.classList.add("hidden")
+        asideTexto.classList.add("hidden")
+    }
+}
+
+window.addEventListener("resize", anchoPantalla)
+
 
 //CONTORNO TEXTO//
 const sinContorno = document.getElementById("sin-contorno");
@@ -128,7 +138,8 @@ const inputSaturado = document.getElementById("range-saturado");
 const inputNegativo = document.getElementById("range-negativo");
 
 const filtros = () => {
-    memeImg.style.filter = `brightness(${inputBrillo.value}) opacity(${inputOpacidad.value}) contrast(${inputContraste.value}%) blur(${inputDesenfoque.value}px) grayscale(${inputGrises.value}%) sepia(${inputSepia.value}%) hue-rotation(${inputHue.value}deg) saturation(${inputSaturado.value}%) invert(${inputNegativo.value})`
+    console.log(inputHue.value)
+    memeImg.style.filter = `brightness(${inputBrillo.value}) opacity(${inputOpacidad.value}) contrast(${inputContraste.value}%) blur(${inputDesenfoque.value}px) grayscale(${inputGrises.value}%) sepia(${inputSepia.value}%) hue-rotate(${inputHue.value}deg) saturation(${inputSaturado.value}%) invert(${inputNegativo.value})`
 };
 
 inputBrillo.addEventListener("input", () => filtros());
@@ -232,7 +243,8 @@ const fondoTransparente = () => {
         textoSupMeme.style.position = 'absolute';
         textoInfMeme.style.bottom = '0';
         textoSupMeme.style.top = '0';
-
+        textoInfMeme.style.left = '40%';
+        textoSupMeme.style.left = '40%';
     } else {
         textoInfMeme.style.backgroundColor = colorFondoTexto.value;
         textoSupMeme.style.backgroundColor = colorFondoTexto.value;
