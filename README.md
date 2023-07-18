@@ -1,18 +1,18 @@
-<h1 aling='center'>Generador de memes</h1>
+## Generador de memes
 
 <p>Proyecto para ADA ITW, en donde utilizo HTML, CSS y Java Script</p>
 
-<img src='https://img.wattpad.com/6eeff06ff69d65913865d96078c2ddbbe3b2f6f6/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f6158557859636c656d59624f73413d3d2d3337333835393532392e313461343434363232383366663432393530383333353638363634372e6a7067?s=fit&w=720&h=720' aling='center' width='400px'>
+## <img src='https://img.wattpad.com/6eeff06ff69d65913865d96078c2ddbbe3b2f6f6/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f6158557859636c656d59624f73413d3d2d3337333835393532392e313461343434363232383366663432393530383333353638363634372e6a7067?s=fit&w=720&h=720' aling='center' width='400px'>
 
 
 <h3>📍 Link al proyecto: <a href='https://lulabath.github.io/generador-de-memes/' target="_blank"></a></h3>
 
 
-##📝 Consigna
+## 📝 Consigna
 <p>En este proyecto la idea es crear una página que nos permita manipular el texto y la imagen de un meme, usando JavaScript para modificar dinámicamente su contenido y sus propiedades. Y finalmente poder descargar el meme para usarlo o compartilo.</p>
 
 
-##🎛 Funcionalidades
+## 🎛 Funcionalidades
 
         Meme
 -Alternar entre paneles
@@ -89,6 +89,7 @@ Menos de 6 (No aprobado)
 -Cumple con las condiciones de accesibilidad avanzada
 -Reutilización de lógica / funciones
 -Commits con mensajes adecuados
+
 
 <p aling="center">
     <img src="https://discoveryformacion.com/wp-content/uploads/2021/06/html-lenguajes-asociados-300x210.png">
