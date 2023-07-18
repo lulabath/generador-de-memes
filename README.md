@@ -5,7 +5,7 @@
 ## <img src='https://img.wattpad.com/6eeff06ff69d65913865d96078c2ddbbe3b2f6f6/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f6158557859636c656d59624f73413d3d2d3337333835393532392e313461343434363232383366663432393530383333353638363634372e6a7067?s=fit&w=720&h=720' aling='center' width='400px'>
 
 
-<h3>📍 Link al proyecto: <a href='https://lulabath.github.io/generador-de-memes/' target="_blank"></a></h3>
+📍 Link al proyecto: https://lulabath.github.io/generador-de-memes/
 
 
 ## 📝 Consigna
