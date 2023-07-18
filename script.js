@@ -32,6 +32,9 @@ const hideAside = () => {
     asideImg.classList.add('hidden');
 }
 
+
+
+
 //CLASE MODO OSCURO// 
 
 const botonOscuro = document.getElementById('boton-oscuro');
@@ -53,25 +56,21 @@ const creoModoClaro = () => {
     botonOscuro.classList.remove('hidden');
 }
 
+
 //OCULTAR TEXTOS//
 const checkboxSup = document.getElementById('texto-superior');
 const checkboxInf = document.getElementById('texto-inferior');
 
-const textoSuperior = document.getElementById('contenedor-texto-sup');
-const textoInferior = document.getElementById('contenedor-texto-inf');
-
 const textoSupMeme = document.getElementById("texto-sup-meme");
 const textoInfMeme = document.getElementById("texto-inf-meme");
 
-const ocultarTextoSup = () =>{
+const ocultarTextoSup = () => {
     console.log(checkboxSup.checked);
-    textoSuperior.classList.toggle('hidden');
     textoSupMeme.classList.toggle('hidden');
 }
 
-const ocultarTextoInf = () =>{
+const ocultarTextoInf = () => {
     console.log(checkboxInf.checked);
-    textoInferior.classList.toggle('hidden');
     textoInfMeme.classList.toggle('hidden');
 }
 
@@ -83,19 +82,19 @@ const sinContorno = document.getElementById("sin-contorno");
 const contornoClaro = document.getElementById("contorno-claro");
 const contornoOscuro = document.getElementById("contorno-oscuro");
 
-const aplicarSinContorno = () =>{
+const aplicarSinContorno = () => {
     textoSupMeme.style.textShadow = 'none';
     textoInfMeme.style.textShadow = 'none';
 }
 sinContorno.addEventListener('click', () => aplicarSinContorno());
 
-const aplicarContornoClaro = () =>{
+const aplicarContornoClaro = () => {
     textoSupMeme.style.textShadow = '1px 1px 3px white';
     textoInfMeme.style.textShadow = '1px 1px 3px white';
 }
 contornoClaro.addEventListener('click', () => aplicarContornoClaro());
 
-const aplicarContornoOscuro = () =>{
+const aplicarContornoOscuro = () => {
     textoSupMeme.style.textShadow = '1px 1px 3px black';
     textoInfMeme.style.textShadow = '1px 1px 3px black';
 }
@@ -109,10 +108,10 @@ const contenedorEditor = document.getElementById('contenedor-editor');
 
 
 const changeBackground = () => {
-    contenedorEditor.style.backgroundImage = `url('${inputUrl.value}')`
-    contenedorEditor.style.backgroundSize = `cover`
-    contenedorEditor.style.backgroundRepeat = `no-repeat`
-    contenedorEditor.style.backgroundPosition = `center`
+    memeImg.style.backgroundImage = `url('${inputUrl.value}')`
+    memeImg.style.backgroundSize = `cover`
+    memeImg.style.backgroundRepeat = `no-repeat`
+    memeImg.style.backgroundPosition = `center`
 };
 inputUrl.addEventListener("input", () => changeBackground());
 
@@ -143,17 +142,14 @@ inputSaturado.addEventListener("input", () => filtros());
 inputNegativo.addEventListener("input", () => filtros());
 
 
-
-
-// FUNCION DESCARGAR MEME NO FUNCIONAAA//
+// FUNCION DESCARGAR MEME//
 const botonDescarga = document.getElementById("boton-descargar");
 
 botonDescarga.addEventListener("click", () => descargarMeme());
 
 const descargarMeme = () => {
-    domtoimage.toBlob(contenedorEditor).then(function(blob){
-        window.saveAs(blob, "mi-meme.png");
-    console.log('descargateeee')
+    domtoimage.toBlob(contenedorEditor).then(function (blob) {
+        saveAs(blob, "mi-meme.png");
     });
 };
 
@@ -182,7 +178,7 @@ const colorFondoImg = document.getElementById('color-fondo-img');//input//
 
 const cambiarFondoMeme = () => {
     codigoColorImg.innerHTML = colorFondoImg.value;
-    contenedorEditor.style.backgroundColor = colorFondoImg.value;
+    memeImg.style.backgroundColor = colorFondoImg.value;
 };
 colorFondoImg.addEventListener('input', () => cambiarFondoMeme());
 
@@ -191,7 +187,7 @@ colorFondoImg.addEventListener('input', () => cambiarFondoMeme());
 const selectImgFondo = document.getElementById('select-fondo-imagen');
 
 const selectImg = () => {
-    contenedorEditor.style.backgroundBlendMode = selectImgFondo.value;
+    memeImg.style.backgroundBlendMode = selectImgFondo.value;
     console.log('hola')
 }
 selectImgFondo.addEventListener("change", () => selectImg());
@@ -210,16 +206,14 @@ const cambiarColorTexto = () => {
 colorTexto.addEventListener('input', () => cambiarColorTexto())
 
 //FONDO TEXTO//
-const  codigoColorFondo = document.getElementById('codigo-color-fondo'); //span//
+const codigoColorFondo = document.getElementById('codigo-color-fondo'); //span//
 const colorFondoTexto = document.getElementById("color-fondo-texto");//input//
 
 const cambiarFondoTexto = () => {
     let colorSeleccionado = colorFondoTexto.value;
     codigoColorFondo.innerHTML = `${colorSeleccionado}`;
     textoSupMeme.style.backgroundColor = `${colorSeleccionado}`;
-    textoSuperior.style.backgroundColor = `${colorSeleccionado}`;
     textoInfMeme.style.backgroundColor = `${colorSeleccionado}`;
-    textoInferior.style.backgroundColor = `${colorSeleccionado}`;
 };
 
 colorFondoTexto.addEventListener("input", () => cambiarFondoTexto());
@@ -230,17 +224,21 @@ colorFondoTexto.addEventListener("input", () => cambiarFondoTexto());
 const checkTransparente = document.getElementById("fondo-transparente"); //INPUT//
 
 const fondoTransparente = () => {
-    if(checkTransparente.checked){
-        textoInferior.style.backgroundColor = 'transparent';
+    console.log('hola transparenrte')
+    if (checkTransparente.checked) {
         textoInfMeme.style.backgroundColor = 'transparent';
         textoSupMeme.style.backgroundColor = 'transparent';
-        textoSuperior.style.backgroundColor = 'transparent';
-        }else{
-            textoInferior.style.backgroundColor = colorFondoTexto.value ;
-            textoInfMeme.style.backgroundColor = colorFondoTexto.value ;
-            textoSupMeme.style.backgroundColor = colorFondoTexto.value;
-            textoSuperior.style.backgroundColor = colorFondoTexto.value;
-        }
+        textoInfMeme.style.position = 'absolute';
+        textoSupMeme.style.position = 'absolute';
+        textoInfMeme.style.bottom = '0';
+        textoSupMeme.style.top = '0';
+
+    } else {
+        textoInfMeme.style.backgroundColor = colorFondoTexto.value;
+        textoSupMeme.style.backgroundColor = colorFondoTexto.value;
+        textoInfMeme.style.position = 'static';
+        textoSupMeme.style.position = 'static';
+    }
 }
 checkTransparente.addEventListener("change", () => fondoTransparente());
 
@@ -248,7 +246,7 @@ checkTransparente.addEventListener("change", () => fondoTransparente());
 //FUNCION CAMBIAR TAMANIO DE TEXTO//
 const tamanioFuente = document.getElementById('tamanio-fuente');
 
-const cambiarTamanioFuente = () =>{
+const cambiarTamanioFuente = () => {
     let tamanioElegido = (tamanioFuente.value);
     textoInfMeme.style.fontSize = `${tamanioElegido}px`;
     textoSupMeme.style.fontSize = `${tamanioElegido}px`;
@@ -261,7 +259,7 @@ tamanioFuente.addEventListener("click", () => cambiarTamanioFuente());
 const topTextInput = document.getElementById("top-text-input");
 const bottomTextInput = document.getElementById("bottom-text-input");
 
-const texto = () =>{
+const texto = () => {
     textoSupMeme.innerText = topTextInput.value;
     textoInfMeme.innerText = bottomTextInput.value;
 }
@@ -273,7 +271,7 @@ bottomTextInput.addEventListener("input", () => texto());
 const interlineado = document.getElementById('interlineado');
 interlineado.addEventListener("change", () => interlineadoDeTexto());
 
-const interlineadoDeTexto = () =>{
+const interlineadoDeTexto = () => {
     textoInfMeme.style.lineHeight = `${interlineado.value}`;
     textoSupMeme.style.lineHeight = `${interlineado.value}`;
 }
@@ -306,17 +304,17 @@ const botonAlineadoIzq = document.getElementById("boton-alineado-izq");
 const botonAlineadoCentro = document.getElementById("boton-alineado-centro");
 const botonAlineadoDer = document.getElementById("boton-alineado-der");
 
-botonAlineadoIzq.addEventListener("click", () =>{
+botonAlineadoIzq.addEventListener("click", () => {
     textoSupMeme.style.textAlign = 'left';
     textoInfMeme.style.textAlign = 'left';
 });
 
-botonAlineadoCentro.addEventListener("click", () =>{
+botonAlineadoCentro.addEventListener("click", () => {
     textoSupMeme.style.textAlign = 'center';
     textoInfMeme.style.textAlign = 'center';
 });
 
-botonAlineadoDer.addEventListener("click", () =>{
+botonAlineadoDer.addEventListener("click", () => {
     textoSupMeme.style.textAlign = 'right';
     textoInfMeme.style.textAlign = 'right';
 });

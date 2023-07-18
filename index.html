@@ -12,8 +12,8 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&family=Open+Sans:ital,wght@0,300;0,600;1,400&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/9495825293.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
-        integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"
+        integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"
         integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA=="
@@ -39,11 +39,12 @@
         <!-- SECCION MAIN -->
         <main>
             <div class="contenedor-editor" id="contenedor-editor">
-                <div class="contenedor-texto" id="contenedor-texto-sup"><p class="texto-meme" id="texto-sup-meme">TOP TEXT</p></div>
+                <p class="texto-meme" id="texto-sup-meme">TOP TEXT</p>
                 <div class="meme-img" id="meme-img"></div>
-                <div  class="contenedor-texto"  id="contenedor-texto-inf"><p class="texto-meme" id="texto-inf-meme">BOTTOM TEXT</p></div>
+                <p class="texto-meme" id="texto-inf-meme">BOTTOM TEXT</p>
             </div>
-            <button type="button" class="boton-descargar" id="boton-descargar"><i class="fa-solid fa-download icono"></i>Descargar
+            <button type="button" class="boton-descargar" id="boton-descargar"><i
+                    class="fa-solid fa-download icono"></i>Descargar
                 meme</button>
         </main>
     </div>
@@ -57,7 +58,8 @@
         <h3>FONDO</h3>
         <div class="div-fondo">
             <div class="fondo-img">
-                <input type="color" name="" id="color-fondo-img" class="input-color-circulo" value="#ffffff"><span id="codigo-color-img">#FFFFFF</span>
+                <input type="color" name="" id="color-fondo-img" class="input-color-circulo" value="#ffffff"><span
+                    id="codigo-color-img">#FFFFFF</span>
             </div>
             <select name="fondo" id="select-fondo-imagen" class="select-img">
                 <option value="unset">Ninguno</option>
@@ -74,7 +76,8 @@
         <label for="opacidad">OPACIDAD</label>
         <input type="range" name="opacidad" class="range" id="range-opacidad" min="0" max="1" value="1" step="0.1">
         <label for="contraste">CONTRASTE</label>
-        <input type="range" name="contraste" class="range" id="range-contraste" min="100" max="1000" value="100" step="1">
+        <input type="range" name="contraste" class="range" id="range-contraste" min="100" max="1000" value="100"
+            step="1">
         <label for="desenfoque">DESENFOQUE</label>
         <input type="range" name="desenfoque" class="range" id="range-desenfoque" min="0" max="10" value="0" step="0.1">
         <label for="grises">ESCALA DE GRISES</label>
@@ -84,7 +87,8 @@
         <label for="hue">HUE</label>
         <input type="range" name="hue" class="range" id="range-hue" min="0" max="359" value="0" step="1">
         <label for="saturado">SATURADO</label>
-        <input type="range" name="saturado" class="range" id="range-saturado" min="100" max="1000" value="100" step="10">
+        <input type="range" name="saturado" class="range" id="range-saturado" min="100" max="1000" value="100"
+            step="10">
         <label for="negativo">NEGATIVO</label>
         <input type="range" name="negativo" class="range" id="range-negativo" min="0" max="1" value="1" step="0.1">
         <button class="boton-aside" id="boton-filtros">Reestablecer filtros</button>
@@ -122,21 +126,26 @@
         </div>
         <div class="tipos-de-justificado">
             <input type="number" name="" id="tamanio-fuente" class="select-texto" value="40">
-            <button type="button" class="boton-justificado" id="boton-alineado-izq"><i class="fas fa-align-left"></i></button>
-            <button type="button"  class="boton-justificado" id="boton-alineado-centro"><i class="fas fa-align-center"></i></button>
-            <button type="button" class="boton-justificado" id="boton-alineado-der"><i class="fas fa-align-right"></i></button>
+            <button type="button" class="boton-justificado" id="boton-alineado-izq"><i
+                    class="fas fa-align-left"></i></button>
+            <button type="button" class="boton-justificado" id="boton-alineado-centro"><i
+                    class="fas fa-align-center"></i></button>
+            <button type="button" class="boton-justificado" id="boton-alineado-der"><i
+                    class="fas fa-align-right"></i></button>
         </div>
         <div class="color-fondo">
             <div class="div-color-texto">
                 <label for="color-texto">COLOR</label>
                 <div class="color-fondo-texto">
-                    <input type="color" name="color-texto" id="color-texto" class="input-color-circulo" value="#000000"><span id="codigo-color-texto">#000000</span>
+                    <input type="color" name="color-texto" id="color-texto" class="input-color-circulo"
+                        value="#000000"><span id="codigo-color-texto">#000000</span>
                 </div>
             </div>
             <div class="div-color-texto">
                 <label for="fondo-texto">FONDO</label>
                 <div class="color-fondo-texto">
-                    <input type="color" name="fondo-texto" id="color-fondo-texto" class="input-color-circulo" value="#ffffff"><span id="codigo-color-fondo">#FFFFFF</span>
+                    <input type="color" name="fondo-texto" id="color-fondo-texto" class="input-color-circulo"
+                        value="#ffffff"><span id="codigo-color-fondo">#FFFFFF</span>
                 </div>
             </div>
         </div>
