@@ -14,7 +14,6 @@ body {
     flex-direction: column;
 }
 
-/* SECCION HEADER */
 header {
     display: flex;
     flex-direction: column;
@@ -75,7 +74,6 @@ option {
     display: none;
 }
 
-/* SECCION MAIN */
 p {
     margin: 3px;
     font-size: 0.85rem;
@@ -170,7 +168,7 @@ input[type='range'] {
     margin: 2px 0 15px 0;
 }
 
-input[type='range']::-webkit-slider-thumb{
+input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
     height: 13px;
     width: 13px;
@@ -456,8 +454,6 @@ textarea {
     background-color: #4e4d4d;
 }
 
-/* CLASES MODO OSCURO */
-
 .modo-oscuro input[type=text] {
     color: #ffffff;
     background-color: #393e49;
@@ -589,12 +585,12 @@ textarea {
 .modo-oscuro .select-texto:hover {
     background-color: #4e5565;
 }
-.modo-oscuro input[type='range']::-webkit-slider-thumb{
-    background-color:whitesmoke;
+
+.modo-oscuro input[type='range']::-webkit-slider-thumb {
+    background-color: whitesmoke;
 }
 
 
-/**MEDIA QUERYS**/
 @media(max-width:700px) {
     .h1-titulo {
         font-size: 1.7rem;
@@ -614,10 +610,10 @@ textarea {
 
     .aside {
         width: 97%;
-        padding:20px 20px 40px 20px;
+        padding: 20px 20px 40px 20px;
         left: 0px;
         right: 0px;
-        top:0;
+        top: 0;
         margin: 0;
     }
 
@@ -660,4 +656,4 @@ textarea {
     .cruz-aside {
         display: none;
     }
-} 
+}

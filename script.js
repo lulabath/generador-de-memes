@@ -1,40 +1,6 @@
-// ASIDE TEXTO E IMAGEN Y CLASS HIDDEN//
+//MAIN//
 
-const botonTexto = document.getElementById('boton-aside-texto');
-const botonImagen = document.getElementById('boton-aside-imagen');
-
-const asideTexto = document.getElementById('aside-texto');
-const asideImg = document.getElementById('aside-img');
-
-botonTexto.addEventListener('click', () => hideImgAside());
-botonImagen.addEventListener('click', () => hideTextoAside());
-
-const hideTextoAside = () => {
-    asideTexto.classList.add('hidden');
-    asideImg.classList.remove('hidden');
-}
-const hideImgAside = () => {
-    asideImg.classList.add('hidden');
-    asideTexto.classList.remove('hidden');
-}
-
-
-//CRUZ Y ESCONDER ASIDE//
-
-const cruzAsideTexto = document.getElementById('cruz-aside-texto');
-const cruzAsideImg = document.getElementById('cruz-aside-img');
-
-cruzAsideImg.addEventListener('click', () => hideAside());
-cruzAsideTexto.addEventListener('click', () => hideAside());
-
-const hideAside = () => {
-    asideTexto.classList.add('hidden');
-    asideImg.classList.add('hidden');
-}
-
-
-//CLASE MODO OSCURO// 
-
+//clase modo oscuro
 const botonOscuro = document.getElementById('boton-oscuro');
 const botonClaro = document.getElementById('boton-claro');
 
@@ -54,8 +20,7 @@ const creoModoClaro = () => {
     botonOscuro.classList.remove('hidden');
 }
 
-
-//OCULTAR TEXTOS//
+//ocultar textos
 const checkboxSup = document.getElementById('texto-superior');
 const checkboxInf = document.getElementById('texto-inferior');
 
@@ -75,19 +40,51 @@ const ocultarTextoInf = () => {
 checkboxSup.addEventListener('change', () => ocultarTextoSup());
 checkboxInf.addEventListener('change', () => ocultarTextoInf());
 
-//ASIDE EN QUERY//
-const anchoPantalla = () => {
-    console.log('m ejecute')
-    if (document.body.getBoundingClientRect().width < 1300) {
-        asideImg.classList.add("hidden")
-        asideTexto.classList.add("hidden")
-    }
+//descargar meme
+const botonDescarga = document.getElementById("boton-descargar");
+
+botonDescarga.addEventListener("click", () => descargarMeme());
+
+const descargarMeme = () => {
+    domtoimage.toBlob(contenedorEditor).then(function (blob) {
+        saveAs(blob, "mi-meme.png");
+    });
+};
+
+
+// ASIDE TEXTO E IMAGEN//
+
+const botonTexto = document.getElementById('boton-aside-texto');
+const botonImagen = document.getElementById('boton-aside-imagen');
+
+const asideTexto = document.getElementById('aside-texto');
+const asideImg = document.getElementById('aside-img');
+
+botonTexto.addEventListener('click', () => hideImgAside());
+botonImagen.addEventListener('click', () => hideTextoAside());
+
+const hideTextoAside = () => {
+    asideTexto.classList.add('hidden');
+    asideImg.classList.remove('hidden');
+}
+const hideImgAside = () => {
+    asideImg.classList.add('hidden');
+    asideTexto.classList.remove('hidden');
 }
 
-window.addEventListener("resize", anchoPantalla)
+//esconder aside con cruz
+const cruzAsideTexto = document.getElementById('cruz-aside-texto');
+const cruzAsideImg = document.getElementById('cruz-aside-img');
 
+cruzAsideImg.addEventListener('click', () => hideAside());
+cruzAsideTexto.addEventListener('click', () => hideAside());
 
-//CONTORNO TEXTO//
+const hideAside = () => {
+    asideTexto.classList.add('hidden');
+    asideImg.classList.add('hidden');
+}
+
+//contorno texto
 const sinContorno = document.getElementById("sin-contorno");
 const contornoClaro = document.getElementById("contorno-claro");
 const contornoOscuro = document.getElementById("contorno-oscuro");
@@ -110,8 +107,7 @@ const aplicarContornoOscuro = () => {
 }
 contornoOscuro.addEventListener('click', () => aplicarContornoOscuro());
 
-
-//URL IMAGEN// 
+//url imagen 
 const inputUrl = document.getElementById('input-url');
 const memeImg = document.getElementById('meme-img');
 const contenedorEditor = document.getElementById('contenedor-editor');
@@ -125,8 +121,7 @@ const changeBackground = () => {
 };
 inputUrl.addEventListener("input", () => changeBackground());
 
-
-//INPUT RANGE NO FUNCIONAANNNN//
+//filtros
 const inputBrillo = document.getElementById("range-brillo");
 const inputOpacidad = document.getElementById("range-opacidad");
 const inputContraste = document.getElementById("range-contraste");
@@ -138,8 +133,8 @@ const inputSaturado = document.getElementById("range-saturado");
 const inputNegativo = document.getElementById("range-negativo");
 
 const filtros = () => {
-    console.log(inputHue.value)
-    memeImg.style.filter = `brightness(${inputBrillo.value}) opacity(${inputOpacidad.value}) contrast(${inputContraste.value}%) blur(${inputDesenfoque.value}px) grayscale(${inputGrises.value}%) sepia(${inputSepia.value}%) hue-rotate(${inputHue.value}deg) saturation(${inputSaturado.value}%) invert(${inputNegativo.value})`
+    console.log('hola', inputBrillo.value)
+    memeImg.style.filter = `brightness(${inputBrillo.value}) opacity(${inputOpacidad.value}) blur(${inputDesenfoque.value}px) contrast(${inputContraste.value}%) grayscale(${inputGrises.value}%) hue-rotate(${inputHue.value}deg) sepia(${inputSepia.value}%) saturate(${inputSaturado.value}%) invert(${inputNegativo.value})`;
 };
 
 inputBrillo.addEventListener("input", () => filtros());
@@ -152,20 +147,7 @@ inputHue.addEventListener("input", () => filtros());
 inputSaturado.addEventListener("input", () => filtros());
 inputNegativo.addEventListener("input", () => filtros());
 
-
-// FUNCION DESCARGAR MEME//
-const botonDescarga = document.getElementById("boton-descargar");
-
-botonDescarga.addEventListener("click", () => descargarMeme());
-
-const descargarMeme = () => {
-    domtoimage.toBlob(contenedorEditor).then(function (blob) {
-        saveAs(blob, "mi-meme.png");
-    });
-};
-
-
-//REESTABLECER FILTROS// 
+//reestablecer filtros
 const botonFiltros = document.getElementById('boton-filtros');
 
 const reestablecerFiltros = () => {
@@ -177,13 +159,21 @@ const reestablecerFiltros = () => {
     inputSepia.value = 0
     inputHue.value = 0
     inputSaturado.value = 100
-    inputNegativo.value = 1
+    inputNegativo.value = 0
 }
-
 botonFiltros.addEventListener('click', () => reestablecerFiltros());
 
+//query para aside
+const anchoPantalla = () => {
+    console.log('m ejecute')
+    if (document.body.getBoundingClientRect().width < 1300) {
+        asideImg.classList.add("hidden")
+        asideTexto.classList.add("hidden")
+    }
+}
+window.addEventListener("resize", anchoPantalla)
 
-//CODIGO COLOR//
+//color img
 const codigoColorImg = document.getElementById('codigo-color-img'); //span//
 const colorFondoImg = document.getElementById('color-fondo-img');//input//
 
@@ -193,8 +183,7 @@ const cambiarFondoMeme = () => {
 };
 colorFondoImg.addEventListener('input', () => cambiarFondoMeme());
 
-
-//FUNCION SELECT IMG//
+//select img
 const selectImgFondo = document.getElementById('select-fondo-imagen');
 
 const selectImg = () => {
@@ -203,8 +192,7 @@ const selectImg = () => {
 }
 selectImgFondo.addEventListener("change", () => selectImg());
 
-
-//INPUT COLOR TEXTO//
+//color texto
 const codigoColorTexto = document.getElementById('codigo-color-texto')//span//
 const colorTexto = document.getElementById('color-texto');//input//
 
@@ -216,7 +204,6 @@ const cambiarColorTexto = () => {
 };
 colorTexto.addEventListener('input', () => cambiarColorTexto())
 
-//FONDO TEXTO//
 const codigoColorFondo = document.getElementById('codigo-color-fondo'); //span//
 const colorFondoTexto = document.getElementById("color-fondo-texto");//input//
 
@@ -229,9 +216,7 @@ const cambiarFondoTexto = () => {
 
 colorFondoTexto.addEventListener("input", () => cambiarFondoTexto());
 
-
-//CHECKED FONDO TRANSPARENTE//
-
+//cheked fondo transparente
 const checkTransparente = document.getElementById("fondo-transparente"); //INPUT//
 
 const fondoTransparente = () => {
@@ -254,8 +239,7 @@ const fondoTransparente = () => {
 }
 checkTransparente.addEventListener("change", () => fondoTransparente());
 
-
-//FUNCION CAMBIAR TAMANIO DE TEXTO//
+//tamanio de texto
 const tamanioFuente = document.getElementById('tamanio-fuente');
 
 const cambiarTamanioFuente = () => {
@@ -266,8 +250,7 @@ const cambiarTamanioFuente = () => {
 }
 tamanioFuente.addEventListener("click", () => cambiarTamanioFuente());
 
-
-//FUNCION ESCRIBIR TEXTO//
+//escribir texto
 const topTextInput = document.getElementById("top-text-input");
 const bottomTextInput = document.getElementById("bottom-text-input");
 
@@ -278,8 +261,7 @@ const texto = () => {
 topTextInput.addEventListener("input", () => texto());
 bottomTextInput.addEventListener("input", () => texto());
 
-
-//INTERLINEADO TEXTO//
+//interlineado texto
 const interlineado = document.getElementById('interlineado');
 interlineado.addEventListener("change", () => interlineadoDeTexto());
 
@@ -288,8 +270,7 @@ const interlineadoDeTexto = () => {
     textoSupMeme.style.lineHeight = `${interlineado.value}`;
 }
 
-
-// ESPACIADO DE TEXTO//
+//espaciado de texto
 const espaciado = document.getElementById("espaciado");
 espaciado.addEventListener("change", () => espaciadoDeTexto());
 
@@ -298,8 +279,7 @@ const espaciadoDeTexto = () => {
     textoSupMeme.style.padding = `${espaciado.value}px`;
 }
 
-
-//FUNCION DE SELECT TEXTO//    
+//select texto  
 const selectFuente = document.getElementById("select-texto");
 
 const cambiarFuente = () => {
@@ -309,9 +289,7 @@ const cambiarFuente = () => {
 
 selectFuente.addEventListener("change", () => cambiarFuente());
 
-
-
-//FUNCION ALINEAR TEXTO //
+//alinear texto
 const botonAlineadoIzq = document.getElementById("boton-alineado-izq");
 const botonAlineadoCentro = document.getElementById("boton-alineado-centro");
 const botonAlineadoDer = document.getElementById("boton-alineado-der");
